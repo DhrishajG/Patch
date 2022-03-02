@@ -1,0 +1,80 @@
+html
+{
+    height: 100%;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+body
+{
+    height: 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient( #75d062, #4ac9b1);
+}
+.plus {
+    --b:4px; /* the thickness */
+    width:40px; /* the size */
+    aspect-ratio:1/1;
+    border:10px solid #000; /* the outer space */
+    background:
+    conic-gradient(from 90deg at var(--b) var(--b),#000 90deg,#fff 0) 
+    calc(100% + var(--b)/2) calc(100% + var(--b)/2)/
+    calc(50%  + var(--b))   calc(50%  + var(--b));
+    display:inline-block;
+}
+.radius {
+    border-radius:50%;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*height: 100%;*/
+}
+    
+.navbar {
+    /*        overflow: hidden;
+    */        float: right;
+}
+
+.navbar a 
+{
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    right: 1rem;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content a 
+{
+    float: none;
+    color: #4ac9b1;;
+
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover 
+{
+    background-color: #ddd;
+}
