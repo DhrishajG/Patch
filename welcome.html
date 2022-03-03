@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<head>
+    <title>Patch - Welcome</title>
+    <link rel="stylesheet" href="main.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+          }
+
+        html,body{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+
+        body > div.column {
+            height: 100%;
+        }
+
+        .column {
+            float: left;
+            display: inline-block;
+        }
+
+        .left {
+            width: 25%;
+            background-color:white;
+
+        }
+
+        .right {
+            width: 75%;
+            background-color:#E5E5E5;
+            padding: 5%;
+        }
+
+        .gradientside {
+            background-image: linear-gradient(90deg, #75d062, #4ac9b1);
+            height: 70px;
+        }
+
+        .switch {
+          position: relative;
+          display: inline-block;
+          width: 60px;
+          height: 34px;
+          float : right;
+          margin-right: 2%;
+          margin-top: 5%;
+          vertical-align: middle; /*cannot align switch in middle */
+        }
+
+        .switch input {
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: black;
+          -webkit-transition: .4s;
+          transition: .4s;
+          display: inline-block;
+          border-radius: 34px;
+        }
+
+        .slider:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background-image: linear-gradient(90deg, #75d062, #4ac9b1);
+          -webkit-transition: .4s;
+          transition: .4s;
+          border-radius: 50%;
+        }
+
+        input:checked + .slider {
+          background-color: #E5E5E5;
+        }
+
+        input:focus + .slider {
+          box-shadow: 0 0 1px #000000 ;
+        }
+
+        input:checked + .slider:before {
+          -webkit-transform: translateX(26px);
+          -ms-transform: translateX(26px);
+          transform: translateX(26px);
+        }
+
+        button {
+            background-color: #e5e5e5;
+            color: white;
+            border: 5px;
+            height: 30px;
+            width: 180px;
+        }
+        .btn {
+            width: 200px;
+            height: 40px;
+            color: white;
+            background-color: #4ac9b1;
+            float: right;
+            font-weight: 600;
+            font-size: 100%;
+            cursor: pointer;
+        }
+        .textblock {
+          font-family: Montserrat, sans-serif;
+          font-weight: 600;
+          display:inline-block;
+          vertical-align:middle;
+        }
+        .textblocksemibold {
+          font-family: Montserrat, sans-serif;
+          font-weight: 600;
+          display:inline-block;
+          font-size: 150%;
+          margin-top: 1%;
+        }
+        .textblockbold {
+          font-family: Montserrat, sans-serif;
+          font-weight: 700;
+          font-size: 300%;
+          display:inline-block;
+        }
+        div {
+            position: relative;
+            animation-name: glideUp;
+            animation-duration: 1s;
+        }
+        section {
+            padding: 10px;
+            width: auto;
+            height: 75%;
+            background-color: white;
+            margin-top: 5%;
+            border-radius: 4px;
+        }
+
+    </style>
+
+</head>
+<body style="background-color:#E5E5E5;">
+    <div class="column left" >
+        <header class ="gradientside">
+              <div style="display:inline-block;vertical-align:middle;">
+                  <img style= "float :left;" src="images/user.png" width="70" height="70">
+              </div>
+              <div class = "textblock">Hi Name!</div>
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider "></span>
+              </label>
+        </header>
+        <center>
+            <p>MESSAGES</p>
+        </center>
+    </div>
+    <div class="column right">
+        <center>
+            <div class = "textblockbold">WELCOME!</div>
+        </center>
+        <div class = "textblocksemibold">MATCHES</div>
+        <button id="myButton" class="gradientside btn" type="submit">Find more matches</button>
+        <section>
+
+        </section>
+    </div>
+
+    <script>
+        document.getElementById("myButton").onclick = function () {
+            location.href = "match.html";
+        };
+    </script>
+
+</body>
+/* need to ID some of the objects that need data from database */
+/* need to set min and max height and width of window */
