@@ -59,7 +59,7 @@ body > div.column {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: black;
+  background-color: #e073c0;
   -webkit-transition: .4s;
   transition: .4s;
   display: inline-block;
@@ -133,21 +133,24 @@ input {
   display:inline-block;
 }
 div {
-    position: relative;
-    animation-name: glideUp;
-    animation-duration: 1s;
+  position: relative;
+}
+.animated {
+  position: relative;
+  animation-name: glideUp;
+  animation-duration: 1s;
 }
 section {
-    padding: 50px;
-    width: 40%;
-    height: 80%;
-    background-color: white;
-    border-radius: 15px;
-    position: absolute;
-    left: 35%;
-    margin-left: -50px;
-    top: 20%;
-    margin-top: -50px;
+  padding: 50px;
+  width: 40%;
+  height: 80%;
+  background-color: white;
+  border-radius: 15px;
+  position: absolute;
+  left: 35%;
+  margin-left: -50px;
+  top: 20%;
+  margin-top: -40px;
 }
 .center {
 
