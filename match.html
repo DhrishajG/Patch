@@ -173,7 +173,7 @@
     <div class="column left" >
         <header class ="gradientside">
               <div style="display:inline-block;vertical-align:middle;">
-                  <img style= "float :left;" src="images/user.png" width="70" height="70">
+                  <img id="toProfile" style= "float :left;" src="images/user.png" width="70" height="70">
               </div>
               <div class = "textblock">Hi Name!</div>
               <label class="switch">
@@ -200,6 +200,9 @@
     <script>
         document.getElementById("myButton").onclick = function () {
             location.href = "welcome.html";
+        };
+        document.getElementById("toProfile").onclick = function() {
+          location.href = "profile.html";
         };
     </script>
 

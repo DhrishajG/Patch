@@ -29,7 +29,7 @@
                 <p id="errMsg" style="color:white">Invalid username or password.</p>
                 <input class="btn" type="submit" value="Login">
             </form>
-            
+
             <p>Don't have an account yet? <b><u><a onclick="showCreate()">Create an account.</a></u></b></p>
         </center>
     </div>
@@ -61,7 +61,7 @@
             var delay = n + Math.floor(Math.random() * 1500);
             setTimeout(toExecute, delay);
         }
-        
+
         function showMain() {
             document.getElementById("loader").style.display = "none";
             document.getElementById("main").style.display = "block";
@@ -81,7 +81,7 @@
         }
 
         function toMain() {
-            window.location.href = "main.html";
+            window.location.href = "welcome.html";
         }
 
         function validate() {
