@@ -28,7 +28,6 @@ h1
   color:#75D062 ;
   margin:0px;
   line-height:4rem;
-  font-family: 'Montserrat Alternates';
 
 }
 h3
@@ -36,9 +35,7 @@ h3
   position: relative;
   font-size: 2rem;
   margin:0px;
-  font-family: 'Montserrat Alternates';
 }
-
 
 .navbar 
 {
@@ -68,7 +65,6 @@ h3
   color: white;
   padding: 14px 16px;
   background-color: inherit;
-  font-family: inherit;
   margin: 0;
 }
 .dropdown-content {
