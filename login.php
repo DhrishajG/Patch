@@ -7,12 +7,12 @@ $database_name = "2021_comp10120_z6";
 
 try
 {
-  $conn = new PDO("mysql:host=$databse_host", $database_user, $database_pass);
+  $conn = new PDO("mysql:host=$database_host", $database_user, $database_pass);
   echo("Connection successful");
 }
 catch(PDOException $pe)
 {
-  die("Could not connet to $host :" . $pe->getMessage());
+  die("Could not connet to $database_host :" . $pe->getMessage());
 }
 
 
