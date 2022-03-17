@@ -22,7 +22,7 @@
             <img src="images/logo.png" alt="Patch" style="width:200px;height:200px;">
             <br><br>
 
-            <form action="login.php" method="post" onsubmit="validate(); return false">
+            <form action="authenticate.php" onsubmit="validate(); return false">
                 <input type="text" id="username" name="username" placeholder="Username"><br><br>
                 <input type="password" id="password" name="password" placeholder="Password">
                 <p><u><a onclick="showRecover()">Forgotten password?</a></u></p><br><br><br>
@@ -71,7 +71,7 @@
         </center>
     </div>
 
-    <script>
+    <script type="text/javascript">
         function load(toExecute, n) {
             document.getElementById("loader").style.display = "block";
             document.getElementById("main").style.display = "none";
