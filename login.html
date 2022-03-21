@@ -22,7 +22,7 @@
             <img src="images/logo.png" alt="Patch" style="width:200px;height:200px;">
             <br><br>
 
-            <form action="authenticate.php" onsubmit="validate(); return false">
+            <form action="authenticate.php">
                 <input type="text" id="username" name="username" placeholder="Username"><br><br>
                 <input type="password" id="password" name="password" placeholder="Password">
                 <p><u><a onclick="showRecover()">Forgotten password?</a></u></p><br><br><br>
@@ -101,19 +101,6 @@
 
         function toMain() {
             window.location.href = "welcome.html";
-        }
-
-        function validate() {
-            document.getElementById("errMsg").style.color = "white";
-            var valid = true
-            // validation of username and password
-            if (valid) {
-                load(toMain, 2000);
-            }
-            else
-            {
-                document.getElementById("errMsg").style.color = "red";
-            }
         }
     </script>
 </body>

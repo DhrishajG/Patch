@@ -3,7 +3,7 @@
 session_start();
 
 //check if user is logged in
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true){
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
   header("location: welcome.html");
   exit();
 }
@@ -17,7 +17,7 @@ function alert($msg) {
 
 $username = $password = "";
 $err = "";
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if($_SERVER["REQUEST_METHOD"] === "POST"){
     // Check if username is empty
     if(empty(trim($_POST["username"]))){
         $err = "Please enter username.";
@@ -54,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     		$err = "Invalid username or password.";
     	}
     }
-    if(empty($err) == false){
+    if(empty($err) === false){
       alert($err);
     }
 }

@@ -1,17 +1,16 @@
 <?php
 
-$database_host = "dbhost.cs.man.ac.uk";
-$database_user = "d66835dg";
-$database_pass = "KillBurn";
-$database_name = "2021_comp10120_z6";
+define('DB_SERVER', 'dbhost.cs.man.ac.uk');
+define('DB_USERNAME', 'd66835dg');
+define('DB_PASSWORD', 'KillBurn');
+define('DB_NAME', '2021_comp10120_z6');
 
-try
-{
-  $conn = new PDO("mysql:host=$database_host", $database_user, $database_pass);
+/* Attempt to connect to MySQL database */
+$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+
+// Check connection
+if($conn === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
 }
-catch(PDOException $pe)
-{
-  die("Could not connet to $database_host :" . $pe->getMessage());
-}
-}
+
 ?>
