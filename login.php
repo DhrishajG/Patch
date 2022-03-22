@@ -1,3 +1,66 @@
+<?php
+//Initialising the session
+session_start();
+
+//check if user is logged in
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+  header("Location: welcome.html");
+}
+
+// Include config file
+require_once "config.php";
+
+function alert($msg) {
+  echo "<script type='text/javascript'>alert('$msg');</script>";
+  header("Location: login.php");
+}
+
+echo($_POST["username"]);
+echo($_POST["password"]);
+
+$username = $password = "";
+$err = "";
+if($_SERVER["REQUEST_METHOD"] === "POST"){
+
+    if(empty($_POST["username"]) || empty($_POST["password"])){
+        $err = "Username or Password Not Entered.";
+    } else{
+        $username = trim($_POST["username"]);
+        $password = trim($_POST["password"]);
+    }
+
+    //Validate credentials
+    if(empty($err)){
+      $sql = "SELECT * FROM owner_info WHERE owner_email = '$username' AND owner_password = '$password'";
+      $result = mysqli_query($conn,$sql);
+      $numrows = mysqli_num_rows($result);
+      if($numrows == 1){
+        $row = mysqli_fetch_assoc($result);
+    		//if(password_verify($password,$row['owner_password'])){
+          session_start();
+          // Store data in session variables
+          $_SESSION["loggedin"] = true;
+          $_SESSION["id"] = $row['owner_id'];
+          $_SESSION["username"] = $username;
+          // Redirect user to welcome page
+          header("Location: welcome.html");
+    		//}
+    		//else{
+    		//	$err = "Invalid username or password.";
+    		//}
+    	}
+    	else{
+    		$err = "Invalid username or password.";
+    	}
+    }
+    if(empty($err) === false){
+      alert($err);
+    }
+}
+?>
+
+
+
 <!DOCTYPE html>
 <head>
     <title>Patch - Login</title>
@@ -22,7 +85,7 @@
             <img src="images/logo.png" alt="Patch" style="width:200px;height:200px;">
             <br><br>
 
-            <form action="authenticate.php" onsubmit="validate(); return false">
+            <form action=" " method="post">
                 <input type="text" id="username" name="username" placeholder="Username"><br><br>
                 <input type="password" id="password" name="password" placeholder="Password">
                 <p><u><a onclick="showRecover()">Forgotten password?</a></u></p><br><br><br>
@@ -41,7 +104,7 @@
             <br><br><br>
 
             <p>Enter your email address to reset password.</p>
-            <form action="" onsubmit="return false">
+            <form action=" " method="post">
                 <input type="text" id="email" name="email" placeholder="Email Address"><br><br><br><br><br><br>
                 <input class="btn" type="submit" value="Reset Password">
             </form>
@@ -101,19 +164,6 @@
 
         function toMain() {
             window.location.href = "welcome.html";
-        }
-
-        function validate() {
-            document.getElementById("errMsg").style.color = "white";
-            var valid = true
-            // validation of username and password
-            if (valid) {
-                load(toMain, 2000);
-            }
-            else
-            {
-                document.getElementById("errMsg").style.color = "red";
-            }
         }
     </script>
 </body>
