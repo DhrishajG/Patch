@@ -1,3 +1,20 @@
+<?php
+
+require_once "config.php";
+
+session_start();
+
+$id = $_SESSION["id"];
+$o_name = "";
+
+$sql_name = "SELECT owner_name FROM owner_info WHERE owner_id = '$id'";
+$name = mysqli_query($conn,$sql_name);
+
+$sql_img = "SELECT owner_img FROM owner_info WHERE owner_id = '$id'";
+$img = mysqli_query($conn, $sql_img);
+
+?>
+
 <!DOCTYPE html>
 <html lang=en>
  <head>
@@ -24,7 +41,7 @@
                         <i class="fa fa-caret-down"></i>
                     </button>
                     <div class="dropdown-content">
-                        <a href="welcome.html">HOME</a>
+                        <a href="welcome.php">HOME</a>
                         <a href="pet.html">PETS</a>
                     </div>
                 </div>
