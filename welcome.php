@@ -96,7 +96,7 @@ else{
         var romantic = true;
 
         document.getElementById("toProfile").onclick = function() {
-            location.href = "profile.html";
+            location.href = "profile.php";
         };
 
         function showHomepage() {
