@@ -55,7 +55,7 @@ $img = mysqli_query($conn, $sql_img);
 
         <div class="container "  style="height: 83vh; ">
             <div class="image" >
-                <img src=<?php echo $img?> style="display:block ; max-width:100%;max-height:100%;  position: relative;  " alt="owner profile image"/>
+                <img src="<?php echo $img?>" style="display:block ; max-width:100%;max-height:100%;  position: relative;  " alt="owner profile image"/>
             </div>
             <div >
                 <h1>HELLO</h1>
