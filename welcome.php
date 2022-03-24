@@ -11,7 +11,7 @@ function getPetInfo($pid){
   $sql_pimg = "SELECT image FROM pet_profile WHERE pet_id = '$pid'";
   $pimg = mysqli_query($conn, $sql_pimg);
   $pet_info = array($pname, $pimg)
-  return $pet_info;
+  //return $pet_info;
 }
 
 $id = $_SESSION["id"];
