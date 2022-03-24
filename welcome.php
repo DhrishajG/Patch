@@ -5,22 +5,22 @@ require_once "config.php";
 session_start();
 
 //to get the information to show the matched pets
-function getPetInfo($pid){
-  $sql_pifo = "SELECT pet_name FROM pet_base_info WHERE pet_id = '$pid'";
-  $pname = mysqli_query($conn,$sql_pifo);
-  $sql_pimg = "SELECT image FROM pet_profile WHERE pet_id = '$pid'";
-  $pimg = mysqli_query($conn, $sql_pimg);
-  $pet_info = array($pname, $pimg)
+//function getPetInfo($pid){
+  //$sql_pifo = "SELECT pet_name FROM pet_base_info WHERE pet_id = '$pid'";
+  //$pname = mysqli_query($conn,$sql_pifo);
+  //$sql_pimg = "SELECT image FROM pet_profile WHERE pet_id = '$pid'";
+  //$pimg = mysqli_query($conn, $sql_pimg);
+  //$pet_info = array($pname, $pimg)
   //return $pet_info;
 }
 
-$id = $_SESSION["id"];
+$uid = $_SESSION["id"];
 $o_name = "";
 
-$sql_name = "SELECT owner_name FROM owner_info WHERE owner_id = '$id'";
+$sql_name = "SELECT owner_name FROM owner_info WHERE owner_id = '$uid'";
 $o_name = mysqli_query($conn,$sql_name);
 
-$sql_pet_id = "SELECT pet_id FROM main WHERE owner_id = '$id'";
+$sql_pet_id = "SELECT pet_id FROM main WHERE owner_id = '$uid'";
 $pet_id = mysqli_query($conn, $sql_pet_id);
 
 $matches = NULL;

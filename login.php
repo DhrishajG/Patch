@@ -15,8 +15,6 @@ function alert($msg) {
   header("Location: login.php");
 }
 
-echo($_POST["username"]);
-echo($_POST["password"]);
 
 $username = $password = "";
 $err = "";
