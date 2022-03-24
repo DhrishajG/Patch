@@ -1,22 +1,24 @@
 <?php
-include_once ("config.php");
-$user=$_GET['username'];
-$email=$_GET['email'];
-$pwd=$_GET['pwd'];
-$repwd=$_GET['repwd'];
 
-$row=$link->query("select * from `user` where username='$user'");
-/*check whether username is repeated*/
-if ($row->rowCount()){
-    $flag=1;/*username already exist*/
-}else if ($pwd!=$repwd){
-   $flag=2;/*passwords rntered are not same*/
-}else{/*insert informations into database*/
-	$hpwd=password_hash($pwd, PASSWORD_DEFAULT);
-    $row=$link->exec("insert into`user`( `username`,  `pwd`,`email`) values ('$user','$hpwd','$email')");
-    session_start();
-    $_SESSION['username']=$user;
-    $_SESSION['email']=$email;
-    $flag=3;/*sign up successfully*/
+require_once "config.php";
+
+$user=$_GET['username'];
+$password=$_GET['password'];
+$repwd=$_GET['repassword'];
+
+$sql = "SELECT * FROM owner_info WHERE owner_email = '$user'";
+$result = mysqli_query($conn, $sql);
+$numrows = mysqli_num_rows($result);
+
+if($numrows !== 0){
+  echo("You already have an account");
 }
-echo $flag;
+else if($pwd !== ){
+  echo("Passwords don't match");
+}
+else{
+  $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+  $sql_insert = "INSERT INTO owner_info (owner_email, owner_password) VALUES ('$username', '$hashed_password')"
+}
+
+?>
