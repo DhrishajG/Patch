@@ -55,11 +55,11 @@ $img = mysqli_query($conn, $sql_img);
 
         <div class="container "  style="height: 83vh; ">
             <div class="image" >
-                <img src="images/profile.jpg" style="display:block ; max-width:100%;max-height:100%;  position: relative;  " alt="owner profile image"/>
+                <img src=<?php echo $img?> style="display:block ; max-width:100%;max-height:100%;  position: relative;  " alt="owner profile image"/>
             </div>
             <div >
                 <h1>HELLO</h1>
-                <h3>Owner</h3>
+                <h3><?php echo $name?></h3>
             </div>
             <!-- <div>
                 <h3 style="background-image: linear-gradient(to right, #75d062, #4ac9b1);color: white;position:sticky; bottom: -6em; text-align: center;"> Account settings </h3>
