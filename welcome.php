@@ -26,6 +26,7 @@ $pet_id = mysqli_query($conn, $sql_pet_id);
 $matches = NULL;
 
 $romantic =  "<script>document.write(romantic)</script>";
+/*
 if($romantic){
   $sql_matches = "SELECT pet_id_matched FROM matches WHERE pet_id_key = '$pet_id'";
   $result = mysqli_query($conn,$sql_matches);
@@ -36,7 +37,7 @@ else{
   $result = mysqli_query($conn,$sql_matches);
   $matches = mysqli_fetch_assoc($result);
 }
-
+*/
 
 ?>
 
