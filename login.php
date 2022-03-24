@@ -22,6 +22,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 
     if(empty($_POST["username"]) || empty($_POST["password"])){
         $err = "Username or Password Not Entered.";
+        alert($err);
     } else{
         $username = trim($_POST["username"]);
         $password = trim($_POST["password"]);
@@ -49,10 +50,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     	}
     	else{
     		$err = "Invalid username or password.";
+        alert($err);
     	}
-    }
-    if(empty($err) === false){
-      alert($err);
     }
 }
 ?>
