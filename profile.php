@@ -5,7 +5,7 @@ require_once "config.php";
 session_start();
 
 $uid = $_SESSION["id"];
-$o_name = "";
+$name = "";
 
 $sql_name = "SELECT owner_name FROM owner_info WHERE owner_id = '$uid'";
 $name = mysqli_query($conn,$sql_name);
