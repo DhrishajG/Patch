@@ -10,7 +10,7 @@ session_start();
   //$pname = mysqli_query($conn,$sql_pifo);
   //$sql_pimg = "SELECT image FROM pet_profile WHERE pet_id = '$pid'";
   //$pimg = mysqli_query($conn, $sql_pimg);
-  //$pet_info = array($pname, $pimg)
+  //$pet_info = array($pname, $pimg);
   //return $pet_info;
 //}
 
@@ -27,12 +27,12 @@ $matches = NULL;
 
 $romantic =  "<script>document.write(romantic)</script>";
 if($romantic){
-  $sql_matches = "SELECT pet_id_matched FROM matches WHERE pet_id_key = '$pet_id'"
+  $sql_matches = "SELECT pet_id_matched FROM matches WHERE pet_id_key = '$pet_id'";
   $result = mysqli_query($conn,$sql_matches);
   $matches = mysqli_fetch_assoc($result);
 }
 else{
-  $sql_matches = "SELECT pet_id_matched FROM matches_friendly WHERE pet_id_key = '$pet_id'"
+  $sql_matches = "SELECT pet_id_matched FROM matches_friendly WHERE pet_id_key = '$pet_id'";
   $result = mysqli_query($conn,$sql_matches);
   $matches = mysqli_fetch_assoc($result);
 }
