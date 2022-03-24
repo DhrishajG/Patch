@@ -774,6 +774,9 @@ body {
   box-shadow: 0 8px 16px rgba(29, 233, 182, 0.3);
   transition: all 0.2s ease-out;
 }
+.trying:hover {
+  margin-left: 0.8em;
+}
 .btn.btn-primary:hover {
   box-shadow: 0 8px 20px rgba(29, 233, 182, 0.35);
 }
@@ -1102,4 +1105,16 @@ figure.snip1157 .author h5 span {
 
 .sec-padding {
   height: 36em;
+}
+
+#link a {
+  text-decoration: none;
+}
+
+#link a:hover {
+  padding-left: 0.3em;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
 }

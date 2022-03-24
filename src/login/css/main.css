@@ -114,6 +114,11 @@ button:hover {
   text-decoration: none;
 }
 
+.txt2:hover {
+  padding-left: 1em;
+  transition: all 0.2s ease-out;
+}
+
 .limiter {
   width: 100%;
   margin: 0 auto;

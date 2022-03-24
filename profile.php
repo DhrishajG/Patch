@@ -4,13 +4,13 @@ require_once "config.php";
 
 session_start();
 
-$id = $_SESSION["id"];
+$uid = $_SESSION["id"];
 $o_name = "";
 
-$sql_name = "SELECT owner_name FROM owner_info WHERE owner_id = '$id'";
+$sql_name = "SELECT owner_name FROM owner_info WHERE owner_id = '$uid'";
 $name = mysqli_query($conn,$sql_name);
 
-$sql_img = "SELECT owner_img FROM owner_info WHERE owner_id = '$id'";
+$sql_img = "SELECT owner_img FROM owner_info WHERE owner_id = '$uid'";
 $img = mysqli_query($conn, $sql_img);
 
 ?>
