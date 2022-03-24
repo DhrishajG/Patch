@@ -402,3 +402,17 @@ button:hover {
     opacity: 1;
   }
 }
+
+.go-back {
+  position: absolute;
+  top: 5.7em;
+  left: 15em;
+  color: #45c9a8;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.go-back:hover {
+  padding-left: 0.7em;
+  color: rgb(100, 168, 142);
+}
