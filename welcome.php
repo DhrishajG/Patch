@@ -12,7 +12,7 @@ session_start();
   //$pimg = mysqli_query($conn, $sql_pimg);
   //$pet_info = array($pname, $pimg)
   //return $pet_info;
-}
+//}
 
 $uid = $_SESSION["id"];
 $o_name = "";
