@@ -16,7 +16,7 @@ function getPetInfo($pid){
   $pimg = $r2["image"];
   $pet_info = array($pname, $pimg);
   return $pet_info;
-//}
+}
 
 $uid = $_SESSION["id"];
 $o_name = "";
