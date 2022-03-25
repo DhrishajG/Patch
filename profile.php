@@ -12,6 +12,9 @@ $name = mysqli_query($conn,$sql_name);
 
 $sql_img = "SELECT owner_img FROM owner_info WHERE owner_id = '$uid'";
 $img = mysqli_query($conn, $sql_img);
+if(empty($img)){
+  $img = "images/profile.jpg";
+}
 
 ?>
 
