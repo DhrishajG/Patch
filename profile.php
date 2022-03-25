@@ -6,13 +6,14 @@ session_start();
 
 $uid = $_SESSION["id"];
 $name = "";
+$img = "";
 
 $sql_name = "SELECT owner_name FROM owner_info WHERE owner_id = '$uid'";
 $name = mysqli_query($conn,$sql_name);
 
 $sql_img = "SELECT owner_img FROM owner_info WHERE owner_id = '$uid'";
 $img = mysqli_query($conn, $sql_img);
-if(empty($img)){
+if($img === NULL){
   $img = "images/profile.jpg";
 }
 
@@ -58,7 +59,7 @@ if(empty($img)){
 
         <div class="container "  style="height: 83vh; ">
             <div class="image" >
-                <img src="<?php echo $img?>" style="display:block ; max-width:100%;max-height:100%;  position: relative;  " alt="owner profile image"/>
+                <img src= "<?php echo $img ?>" style="display:block ; max-width:100%;max-height:100%;  position: relative;  " alt="owner profile image"/>
             </div>
             <div >
                 <h1>HELLO</h1>
