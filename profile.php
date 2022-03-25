@@ -63,7 +63,7 @@ if($img === NULL){
             </div>
             <div >
                 <h1>HELLO</h1>
-                <h3><?php echo $name ?></h3>
+                <h3><?php echo $name; ?></h3>
             </div>
             <!-- <div>
                 <h3 style="background-image: linear-gradient(to right, #75d062, #4ac9b1);color: white;position:sticky; bottom: -6em; text-align: center;"> Account settings </h3>
