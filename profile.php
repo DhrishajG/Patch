@@ -45,7 +45,7 @@ if(empty($img)){
                     </button>
                     <div class="dropdown-content">
                         <a href="welcome.php">HOME</a>
-                        <a href="pet.html">PETS</a>
+                        <a href="pet.php">PETS</a>
                     </div>
                 </div>
            </div>

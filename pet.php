@@ -57,8 +57,8 @@ $img = $des['img'];
                     <span style="position:relative; right:1rem; color: white; ">MENU</span>
 
                     <div class="dropdown-content">
-                        <a href="welcome.html">HOME</a>
-                        <a href="profile.html">PROFILE</a>
+                        <a href="welcome.php">HOME</a>
+                        <a href="profile.php">PROFILE</a>
                     </div>
                 </div>
             </div>
