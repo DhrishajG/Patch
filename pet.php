@@ -6,8 +6,10 @@ session_start();
 $uid = $_SESSION["id"];
 
 $sql_pet_id = "SELECT pet_id FROM main WHERE owner_id = '$uid'";
-$pet_id = mysqli_query($conn, $sql_pet_id);
-/*
+$result = mysqli_query($conn, $sql_pet_id);
+$row = mysqli_fetch_assoc($result);
+$pet_id = $row["pet_id"];
+
 $sql_pname = "SELECT pet_name FROM pet_base_info WHERE pet_id = '$pet_id'";
 $pname = mysqli_query($conn,$sql_pname);
 
@@ -30,7 +32,7 @@ $breed = $looks['breed'];
 $pedigreed = $looks['pedigreed'];
 $text = $des['description'];
 $img = $des['img'];
-*/
+
 ?>
 
     <!DOCTYPE html>

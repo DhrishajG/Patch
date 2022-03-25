@@ -8,11 +8,12 @@ $uid = $_SESSION["id"];
 $name = "";
 $img = "";
 
-$sql_name = "SELECT owner_name FROM owner_info WHERE owner_id = '$uid'";
-$name = mysqli_query($conn,$sql_name);
+$sql_name = "SELECT * FROM owner_info WHERE owner_id = '$uid'";
+$result = mysqli_query($conn,$sql_name);
+$row = mysqli_fetch_assoc($result);
+$name = $row["owner_name"];
+$img = $row["owner_img"];
 
-$sql_img = "SELECT owner_img FROM owner_info WHERE owner_id = '$uid'";
-$img = mysqli_query($conn, $sql_img);
 if($img === NULL){
   $img = "images/profile.jpg";
 }
