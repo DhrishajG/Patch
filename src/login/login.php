@@ -1,3 +1,61 @@
+<?php
+//Initialising the session
+session_start();
+
+//check if user is logged in
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+  header("Location: ../home/index.html");
+}
+
+// Include config file
+require_once "../../config.php";
+
+function alert($msg) {
+  echo "<script type='text/javascript'>alert('$msg');</script>";
+  header("Location: ../login/login.php");
+}
+
+
+$username = $password = "";
+$err = "";
+if($_SERVER["REQUEST_METHOD"] === "POST"){
+
+    if(empty($_POST["username"]) || empty($_POST["password"])){
+        $err = "Username or Password Not Entered.";
+        alert($err);
+    } else{
+        $username = trim($_POST["username"]);
+        $password = trim($_POST["password"]);
+    }
+
+    //Validate credentials
+    if(empty($err)){
+      $sql = "SELECT * FROM owner_info WHERE owner_email = '$username' AND owner_password = '$password'";
+      $result = mysqli_query($conn,$sql);
+      $numrows = mysqli_num_rows($result);
+      if($numrows == 1){
+        $row = mysqli_fetch_assoc($result);
+    		//if(password_verify($password,$row['owner_password'])){
+          session_start();
+          // Store data in session variables
+          $_SESSION["loggedin"] = true;
+          $_SESSION["id"] = $row['owner_id'];
+          $_SESSION["username"] = $username;
+          // Redirect user to welcome page
+          header("Location: ../home/index.html");
+    		//}
+    		//else{
+    		//	$err = "Invalid username or password.";
+    		//}
+    	}
+    	else{
+    		$err = "Invalid username or password.";
+        alert($err);
+    	}
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +68,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-	
+
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -21,13 +79,13 @@
 					<img src="images/img-01.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" action = "login.php" method="post">
 					<span class="login100-form-title">
 						Member Login
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="Email">
+						<input class="input100" type="text" name="username" placeholder="Email">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -35,13 +93,13 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" name="password" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
-					
+
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
 							Login
@@ -67,7 +125,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<script >
 		$('.js-tilt').tilt({
 			scale: 1.1
