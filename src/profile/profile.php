@@ -135,27 +135,22 @@ $pet_img = $des["image"];
                         </div>
                     </div>
                     <div class="form-group" style="padding: 0 0.4em 0 0.4em;">
-                        <label class="form-control-label" for="">Breed</label>
-                        <select type="text" id="input-breed" class="form-control form-control-alternative large-custom-select" placeholder="Pet's breed">
-                            <option value="my_breed">My breed</option>
-                            <option value="other_breed">Other breed</option>
-                            <option value="next_breed">Next breed</option>
+                      <label class="form-control-label" for="">Breed</label>
+                      <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pet's breed", value="<?php echo $pet_breed; ?>">
+
                         </select>
                     </div>
                     <div class="dog-row">
                         <div class="form-group dog-col">
                           <label class="form-control-label" for="">Colour</label>
                           <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pet's colour", value="<?php echo $pet_colour; ?>">
-                                <option value="brows">Brown</option>
-                                <option value="white">White</option>
-                                <option value="black">Black</option>
+
                             </select>
                         </div>
                         <div class="form-group dog-col">
                           <label class="form-control-label" for="">Pedigree</label>
                           <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pedigreed?", value="<?php echo $pet_pedigreed; ?>">
-                                <option value="pedigreed">Yes</option>
-                                <option value="no_pedigreed">No</option>
+
                             </select>
                         </div>
                     </div>
