@@ -47,8 +47,8 @@ $res4 = mysqli_query($conn, $sql_pet_des);
 $des = mysqli_fetch_assoc($res4);
 $pet_about = $des["description"];
 $pet_img = $des["image"];
-echo($pet_img);
-echo($owner_postcode);
+echo($pet_about);
+echo($owner_des);
 
 ?>
 
@@ -93,7 +93,7 @@ echo($owner_postcode);
                 <div class="col-lg-3 order-lg-2">
                     <div class="card-profile-image">
                     <a href="#">
-                        <img src="images/1.jpeg" class="rounded-circle" />
+                        <img src="<?php echo $pet_img; ?>" class="rounded-circle" />
                     </a>
                     </div>
                 </div>
