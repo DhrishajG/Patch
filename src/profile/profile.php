@@ -89,7 +89,7 @@ $_SESSION["pet_des"] = $_POST["pet_des"];
         <!-- Header container -->
         <div class="container-fluid d-flex align-items-center">
             <h1 style="position: absolute; top: 1em; color: white;">My profile</h1>
-            <a class="go-back" href="test.php">
+            <a class="go-back" href="../home/index">
                 <span class="fa fa-arrow-left" style="margin-right: .7em;"></span>Go to homepage
             </a>
             <div class="row">
