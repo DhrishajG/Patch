@@ -33,13 +33,13 @@ $pet_height = $pet["height"];
 $pet_age = $pet["age"];
 $pet_breed = $pet["breed"];
 $pet_colour = $pet["colour"];
-$pet_pedigreed = $pet["pedigreed"];
-$pedigreed = "";
-if($pet_pedigreed===1){
-  $pedigreed = "Yes";
+$pedigreed = $pet["pedigreed"];
+$pet_pedigreed = "";
+if($pedigreed===1){
+  $pet_pedigreed = "Yes";
 }
 else{
-  $pedigreed = "No";
+  $pet_pedigreed = "No";
 }
 
 $sql_pet_des = "SELECT * FROM pet_profile WHERE pet_id = '$pid'";
@@ -144,16 +144,16 @@ $pet_img = $des["image"];
                     </div>
                     <div class="dog-row">
                         <div class="form-group dog-col">
-                            <label class="form-control-label" for="">Color</label>
-                            <select type="text" id="input-color" class="form-control form-control-alternative small-custom-select" placeholder="Pet's color">
+                          <label class="form-control-label" for="">Colour</label>
+                          <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pet's colour", value="<?php echo $pet_colour; ?>">
                                 <option value="brows">Brown</option>
                                 <option value="white">White</option>
                                 <option value="black">Black</option>
                             </select>
                         </div>
                         <div class="form-group dog-col">
-                            <label class="form-control-label" for="">Pedigreed</label>
-                            <select type="text" id="input-pedigreed" class="form-control form-control-alternative small-custom-select" placeholder="Is your pet pedigreed?">
+                          <label class="form-control-label" for="">Pedigree</label>
+                          <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pedigreed?", value="<?php echo $pet_pedigreed; ?>">
                                 <option value="pedigreed">Yes</option>
                                 <option value="no_pedigreed">No</option>
                             </select>
