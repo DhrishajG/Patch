@@ -5,8 +5,6 @@ require_once "../../config.php";
 session_start();
 
 $uid = $_SESSION["id"];
-$name = "";
-$img = "";
 
 $sql_owner = "SELECT * FROM owner_info WHERE owner_id = '$uid'";
 $res1 = mysqli_query($conn,$sql_owner);
@@ -48,6 +46,26 @@ $des = mysqli_fetch_assoc($res4);
 $pet_about = $des["description"];
 $pet_img = $des["image"];
 
+$_SESSION["owner_name"] = $owner_name;
+$_SESSION["owner_lastname"] = $owner_lastname;
+$_SESSION["owner_email"] = $owner_email;
+$_SESSION["owner_add"] = $_POST["address"];
+$_SESSION["owner_city"] = $_POST["city"];
+$_SESSION["owner_postcode"] = $_POST["postcode"];
+$_SESSION["owner_des"] = $_POST["owner_des"];
+
+$_SESSION["pid"] = $pid;
+$_SESSION["pet_name"] = $pet_name;
+$_SESSION["weight"] = $_POST["weight"];
+$_SESSION["height"] = $_POST["height"];
+$_SESSION["age"] = $_POST["age"];
+$_SESSION["breed"] = $pet_breed;
+$_SESSION["colour"] = $pet_colour;
+$_SESSION["pedigreed"] = $pet_pedigreed;
+$_SESSION["image"] = $pet_img;
+$_SESSION["pet_des"] = $_POST["pet_des"];
+
+
 ?>
 
 
@@ -71,7 +89,7 @@ $pet_img = $des["image"];
         <!-- Header container -->
         <div class="container-fluid d-flex align-items-center">
             <h1 style="position: absolute; top: 1em; color: white;">My profile</h1>
-            <a class="go-back" href="">
+            <a class="go-back" href="test.php">
                 <span class="fa fa-arrow-left" style="margin-right: .7em;"></span>Go to homepage
             </a>
             <div class="row">
@@ -91,7 +109,7 @@ $pet_img = $des["image"];
                 <div class="col-lg-3 order-lg-2">
                     <div class="card-profile-image">
                     <a href="#">
-                        <img src="<?php echo $pet_img; ?>" class="rounded-circle" />
+                        <img src="<?php echo $pet_img; ?>" class="rounded-circle"/>
                     </a>
                     </div>
                 </div>
@@ -121,17 +139,17 @@ $pet_img = $des["image"];
                         </div>
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Age (years)</label>
-                            <input type="number" id="input-age" class="form-control form-control-alternative" placeholder="Pet's age", value="<?php echo $pet_age; ?>">
+                            <input type="number" id="input-age" class="form-control form-control-alternative" placeholder="Pet's age", value="<?php echo $pet_age; ?>" name="age">
                         </div>
                     </div>
                     <div class="dog-row">
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Size (cm)</label>
-                            <input type="number" id="input-size" class="form-control form-control-alternative" placeholder="Pet's size", value="<?php echo $pet_height; ?>">
+                            <input type="number" id="input-size" class="form-control form-control-alternative" placeholder="Pet's size", value="<?php echo $pet_height; ?>" name="height">
                         </div>
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Weight (kg)</label>
-                            <input type="number" id="input-weight" class="form-control form-control-alternative" placeholder="Pet's weight",, value="<?php echo $pet_weight; ?>">
+                            <input type="number" id="input-weight" class="form-control form-control-alternative" placeholder="Pet's weight",, value="<?php echo $pet_weight; ?>" name="weight">
                         </div>
                     </div>
                     <div class="form-group" style="padding: 0 0.4em 0 0.4em;">
@@ -156,11 +174,8 @@ $pet_img = $des["image"];
                     </div>
                     <div class="form-group focused">
                         <label>About Him</label>
-                        <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about them ..."><?php echo $pet_about; ?></textarea>
+                        <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about them ..." name="pet_des"><?php echo $pet_about; ?></textarea>
                     </div>
-                    <button>
-        							Save
-        						</button>
                 </div>
                 </div>
             </div>
@@ -211,7 +226,7 @@ $pet_img = $des["image"];
                         <div class="col-md-12">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-address">Address</label>
-                            <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" type="text", value="<?php echo $owner_add; ?>">
+                            <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" type="text", value="<?php echo $owner_add; ?>" name="address">
                         </div>
                         </div>
                     </div>
@@ -219,7 +234,7 @@ $pet_img = $des["image"];
                         <div class="col-lg-4">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-city">City</label>
-                            <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City", value="<?php echo $owner_city; ?>">
+                            <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City", value="<?php echo $owner_city; ?>" name="city">
                         </div>
                         </div>
                         <div class="col-lg-4">
@@ -231,7 +246,7 @@ $pet_img = $des["image"];
                         <div class="col-lg-4">
                         <div class="form-group">
                             <label class="form-control-label" for="input-country">Postal code</label>
-                            <input type="text" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code", value="<?php echo $owner_postcode; ?>">
+                            <input type="text" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code", value="<?php echo $owner_postcode; ?>" name="postcode">
                         </div>
                         </div>
                     </div>
@@ -242,7 +257,7 @@ $pet_img = $des["image"];
                     <div class="pl-lg-4">
                     <div class="form-group focused">
                         <label>About Me</label>
-                        <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ..."><?php echo $owner_des; ?></textarea>
+                        <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ..." name="owner_des"><?php echo $owner_des; ?></textarea>
                     </div>
                     </div>
                 </form>

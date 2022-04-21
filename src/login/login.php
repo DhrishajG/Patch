@@ -11,7 +11,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 require_once "../../config.php";
 
 function alert($msg) {
-  echo "<script type='text/javascript'>alert('$msg');</script>";
+  echo $msg;
   header("Location: ../login/login.php");
 }
 
