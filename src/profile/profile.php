@@ -65,7 +65,6 @@ $_SESSION["pedigreed"] = $pet_pedigreed;
 $_SESSION["image"] = $pet_img;
 $_SESSION["pet_des"] = $_POST["pet_des"];
 
-echo $_SESSION["owner_add"];
 
 ?>
 
@@ -90,7 +89,7 @@ echo $_SESSION["owner_add"];
         <!-- Header container -->
         <div class="container-fluid d-flex align-items-center">
             <h1 style="position: absolute; top: 1em; color: white;">My profile</h1>
-            <a class="go-back" href="../home/index">
+            <a class="go-back" href="../home/index.html">
                 <span class="fa fa-arrow-left" style="margin-right: .7em;"></span>Go to homepage
             </a>
             <div class="row">
