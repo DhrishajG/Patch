@@ -179,10 +179,6 @@ $pet_img = $des["image"];
                     <div class="pl-lg-4">
                     <div class="row">
                         <div class="col-lg-6">
-                        <div class="form-group focused">
-                            <label class="form-control-label" for="input-username">Username</label>
-                            <input type="text" id="input-username" class="form-control form-control-alternative" placeholder="Username">
-                        </div>
                         </div>
                         <div class="col-lg-6">
                         <div class="form-group">
