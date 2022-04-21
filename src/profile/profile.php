@@ -124,7 +124,7 @@ $_SESSION["pet_des"] = $_POST["pet_des"];
                       </div>
                       </div>
                   </div>
-                <form action="" method="post">
+                <form action="profile.php" method="post">
                 <div class="text-center">
                     <h3>
                     <?php echo $pet_name; ?><span class="font-weight-light">, <?php echo $pet_age; ?> yo</span>
@@ -140,17 +140,17 @@ $_SESSION["pet_des"] = $_POST["pet_des"];
                         </div>
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Age (years)</label>
-                            <input type="number" id="input-age" class="form-control form-control-alternative" placeholder="Pet's age", value="<?php echo $pet_age; ?>" name="age">
+                            age: <input type="number" id="input-age" class="form-control form-control-alternative" placeholder="Pet's age", value="<?php echo $pet_age; ?>" name="age">
                         </div>
                     </div>
                     <div class="dog-row">
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Size (cm)</label>
-                            <input type="number" id="input-size" class="form-control form-control-alternative" placeholder="Pet's size", value="<?php echo $pet_height; ?>" name="height">
+                            height: <input type="number" id="input-size" class="form-control form-control-alternative" placeholder="Pet's size", value="<?php echo $pet_height; ?>" name="height">
                         </div>
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Weight (kg)</label>
-                            <input type="number" id="input-weight" class="form-control form-control-alternative" placeholder="Pet's weight",, value="<?php echo $pet_weight; ?>" name="weight">
+                            weight: <input type="number" id="input-weight" class="form-control form-control-alternative" placeholder="Pet's weight",, value="<?php echo $pet_weight; ?>" name="weight">
                         </div>
                     </div>
                     <div class="form-group" style="padding: 0 0.4em 0 0.4em;">
@@ -194,7 +194,7 @@ $_SESSION["pet_des"] = $_POST["pet_des"];
                 </div>
                 </div>
                 <div class="card-body">
-                <form action="" method="post">
+                <form action="profile.php" method="post">
                     <h6 class="heading-small text-muted mb-4">User information</h6>
                     <div class="pl-lg-4">
                       <div class="row">
