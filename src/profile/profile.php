@@ -181,7 +181,7 @@ $pet_img = $des["image"];
                         <div class="col-lg-6">
                         </div>
                         <div class="col-lg-6">
-                        <div class="form-group">
+                        <div class="form-group focused">
                             <label class="form-control-label" for="input-email">Email address</label>
                             <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="name@example.com", value="<?php echo $owner_email; ?>">
                         </div>
