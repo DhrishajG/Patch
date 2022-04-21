@@ -275,7 +275,7 @@ $_SESSION["pet_des"] = $_POST["pet_des"];
 
     <script>
       function openPage(){
-        window.open("test.php","_self")
+        window.location.href = "test.php";
       };
     </script>
 </html>
