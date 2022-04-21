@@ -124,6 +124,7 @@ $_SESSION["pet_des"] = $_POST["pet_des"];
                       </div>
                       </div>
                   </div>
+                <form action="" method="post">
                 <div class="text-center">
                     <h3>
                     <?php echo $pet_name; ?><span class="font-weight-light">, <?php echo $pet_age; ?> yo</span>
@@ -177,6 +178,7 @@ $_SESSION["pet_des"] = $_POST["pet_des"];
                         <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about them ..." name="pet_des"><?php echo $pet_about; ?></textarea>
                     </div>
                 </div>
+              </form>
                 </div>
             </div>
             </div>
@@ -192,7 +194,7 @@ $_SESSION["pet_des"] = $_POST["pet_des"];
                 </div>
                 </div>
                 <div class="card-body">
-                <form>
+                <form action="" method="post">
                     <h6 class="heading-small text-muted mb-4">User information</h6>
                     <div class="pl-lg-4">
                       <div class="row">
@@ -275,7 +277,7 @@ $_SESSION["pet_des"] = $_POST["pet_des"];
 
     <script>
       function openPage(){
-        window.location.href = "../home/index.html";
+        window.location.href = "test.php";
       };
     </script>
 </html>
