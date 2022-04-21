@@ -91,7 +91,7 @@ $pet_img = $des["image"];
                 <div class="col-lg-3 order-lg-2">
                     <div class="card-profile-image">
                     <a href="#">
-                        <img src="<<?php $pet_img; ?>" class="rounded-circle" />
+                        <img src="<?php $pet_img; ?>" class="rounded-circle" />
                     </a>
                     </div>
                 </div>
@@ -120,30 +120,30 @@ $pet_img = $des["image"];
                 </div>
                 <div class="text-center">
                     <h3>
-                    <<?php echo $pet_name; ?><span class="font-weight-light">, <<?php echo $pet_age; ?> yo</span>
+                    <?php echo $pet_name; ?><span class="font-weight-light">, <?php echo $pet_age; ?> yo</span>
                     </h3>
                     <div class="h5 font-weight-300">
-                    <i class="ni location_pin mr-2"></i><<?php echo $owner_city; ?>, UK
+                    <i class="ni location_pin mr-2"></i><?php echo $owner_city; ?>, UK
                     </div>
                     <hr class="my-4">
                     <div class="dog-row">
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Name</label>
-                            <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pet's nickname", value="<<?php echo $pet_name; ?>">
+                            <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pet's nickname", value="<?php echo $pet_name; ?>">
                         </div>
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Age (years)</label>
-                            <input type="number" id="input-age" class="form-control form-control-alternative" placeholder="Pet's age", value="<<?php echo $pet_age; ?>">
+                            <input type="number" id="input-age" class="form-control form-control-alternative" placeholder="Pet's age", value="<?php echo $pet_age; ?>">
                         </div>
                     </div>
                     <div class="dog-row">
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Size (cm)</label>
-                            <input type="number" id="input-size" class="form-control form-control-alternative" placeholder="Pet's size", value="<<?php echo $pet_height; ?>">
+                            <input type="number" id="input-size" class="form-control form-control-alternative" placeholder="Pet's size", value="<?php echo $pet_height; ?>">
                         </div>
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Weight (kg)</label>
-                            <input type="number" id="input-weight" class="form-control form-control-alternative" placeholder="Pet's weight",, value="<<?php echo $pet_weight; ?>">
+                            <input type="number" id="input-weight" class="form-control form-control-alternative" placeholder="Pet's weight",, value="<?php echo $pet_weight; ?>">
                         </div>
                     </div>
                     <div class="form-group" style="padding: 0 0.4em 0 0.4em;">
@@ -173,7 +173,7 @@ $pet_img = $des["image"];
                     </div>
                     <div class="form-group focused">
                         <label>About Him</label>
-                        <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about them ...", value="<<?php echo $pet_about; ?>"></textarea>
+                        <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about them ...", value="<?php echo $pet_about; ?>"></textarea>
                     </div>
                 </div>
                 </div>
@@ -204,7 +204,7 @@ $pet_img = $des["image"];
                         <div class="col-lg-6">
                         <div class="form-group">
                             <label class="form-control-label" for="input-email">Email address</label>
-                            <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="name@example.com", value="<<?php echo $owner_email; ?>">
+                            <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="name@example.com", value="<?php echo $owner_email; ?>">
                         </div>
                         </div>
                     </div>
@@ -212,13 +212,13 @@ $pet_img = $des["image"];
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-first-name">First name</label>
-                            <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name", value="<<?php echo $owner_name; ?>">
+                            <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name", value="<?php echo $owner_name; ?>">
                         </div>
                         </div>
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-last-name">Last name</label>
-                            <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name", value="<<?php echo $owner_lastname; ?>">
+                            <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name", value="<?php echo $owner_lastname; ?>">
                         </div>
                         </div>
                     </div>
@@ -231,7 +231,7 @@ $pet_img = $des["image"];
                         <div class="col-md-12">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-address">Address</label>
-                            <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" type="text", value="<<?php echo $owner_add; ?>">
+                            <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" type="text", value="<?php echo $owner_add; ?>">
                         </div>
                         </div>
                     </div>
@@ -239,7 +239,7 @@ $pet_img = $des["image"];
                         <div class="col-lg-4">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-city">City</label>
-                            <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City", value="<<?php echo $owner_city; ?>">
+                            <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City", value="<?php echo $owner_city; ?>">
                         </div>
                         </div>
                         <div class="col-lg-4">
@@ -251,7 +251,7 @@ $pet_img = $des["image"];
                         <div class="col-lg-4">
                         <div class="form-group">
                             <label class="form-control-label" for="input-country">Postal code</label>
-                            <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code", value="<<?php echo $owner_postcode; ?>">
+                            <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code", value="<?php echo $owner_postcode; ?>">
                         </div>
                         </div>
                     </div>
@@ -262,7 +262,7 @@ $pet_img = $des["image"];
                     <div class="pl-lg-4">
                     <div class="form-group focused">
                         <label>About Me</label>
-                        <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...", value="<<?php echo $owner_des; ?>"></textarea>
+                        <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...", value="<?php echo $owner_des; ?>"></textarea>
                     </div>
                     </div>
                 </form>
