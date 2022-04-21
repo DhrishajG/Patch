@@ -193,25 +193,9 @@ $pet_img = $des["image"];
                       </div>
                     <div class="row">
                         <div class="col-lg-6">
-                        </div>
-                        <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-email">Email address</label>
                             <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="name@example.com", value="<?php echo $owner_email; ?>">
-                        </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                        <div class="form-group focused">
-                            <label class="form-control-label" for="input-first-name">First name</label>
-                            <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name", value="<?php echo $owner_name; ?>">
-                        </div>
-                        </div>
-                        <div class="col-lg-6">
-                        <div class="form-group focused">
-                            <label class="form-control-label" for="input-last-name">Last name</label>
-                            <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name", value="<?php echo $owner_lastname; ?>">
                         </div>
                         </div>
                     </div>
