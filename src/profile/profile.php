@@ -47,6 +47,8 @@ $res4 = mysqli_query($conn, $sql_pet_des);
 $des = mysqli_fetch_assoc($res4);
 $pet_about = $des["description"];
 $pet_img = $des["image"];
+echo($pet_img);
+echo($owner_postcode);
 
 ?>
 
@@ -76,7 +78,7 @@ $pet_img = $des["image"];
             </a>
             <div class="row">
             <div class="col-lg-7 col-md-10">
-                <h1 class="display-2 text-white">Hello <<?php echo $owner_name; ?></h1>
+                <h1 class="display-2 text-white"><?php echo $owner_name; ?></h1>
                 <p class="text-white mt-0 mb-5">This is your profile page. Here, you can see and edit everything that people can know about you and your pet</p>
             </div>
             </div>
