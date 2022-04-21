@@ -158,11 +158,11 @@ $pet_img = $des["image"];
                         <label>About Him</label>
                         <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about them ..."><?php echo $pet_about; ?></textarea>
                     </div>
+                    <button>
+        							Save
+        						</button>
                 </div>
                 </div>
-                <button>
-    							Save
-    						</button>
             </div>
             </div>
             <div class="col-xl-8 order-xl-1">
