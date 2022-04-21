@@ -65,6 +65,7 @@ $_SESSION["pedigreed"] = $pet_pedigreed;
 $_SESSION["image"] = $pet_img;
 $_SESSION["pet_des"] = $_POST["pet_des"];
 
+echo $_SESSION["owner_add"];
 
 ?>
 
