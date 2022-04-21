@@ -76,26 +76,26 @@
                     <div class="dog-row">
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Name</label>
-                            <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="His nickname">
+                            <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pet's nickname">
                         </div>
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Age</label>
-                            <input type="number" id="input-age" class="form-control form-control-alternative" placeholder="His age">
+                            <input type="number" id="input-age" class="form-control form-control-alternative" placeholder="Pet's age">
                         </div>
                     </div>
                     <div class="dog-row">
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Size</label>
-                            <input type="number" id="input-size" class="form-control form-control-alternative" placeholder="His size">
+                            <input type="number" id="input-size" class="form-control form-control-alternative" placeholder="Pet's size">
                         </div>
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Weight</label>
-                            <input type="number" id="input-weight" class="form-control form-control-alternative" placeholder="His weight">
+                            <input type="number" id="input-weight" class="form-control form-control-alternative" placeholder="Pet's weight">
                         </div>
                     </div>
                     <div class="form-group" style="padding: 0 0.4em 0 0.4em;">
                         <label class="form-control-label" for="">Breed</label>
-                        <select type="text" id="input-breed" class="form-control form-control-alternative large-custom-select" placeholder="His breed">
+                        <select type="text" id="input-breed" class="form-control form-control-alternative large-custom-select" placeholder="Pet's breed">
                             <option value="my_breed">My breed</option>
                             <option value="other_breed">Other breed</option>
                             <option value="next_breed">Next breed</option>
@@ -104,7 +104,7 @@
                     <div class="dog-row">
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Color</label>
-                            <select type="text" id="input-color" class="form-control form-control-alternative small-custom-select" placeholder="His color">
+                            <select type="text" id="input-color" class="form-control form-control-alternative small-custom-select" placeholder="Pet's color">
                                 <option value="brows">Brown</option>
                                 <option value="white">White</option>
                                 <option value="black">Black</option>
@@ -112,7 +112,7 @@
                         </div>
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Pedigreed</label>
-                            <select type="text" id="input-pedigreed" class="form-control form-control-alternative small-custom-select" placeholder="Is he pedigreed?">
+                            <select type="text" id="input-pedigreed" class="form-control form-control-alternative small-custom-select" placeholder="Is your pet pedigreed?">
                                 <option value="pedigreed">Yes</option>
                                 <option value="no_pedigreed">No</option>
                             </select>
@@ -120,7 +120,7 @@
                     </div>
                     <div class="form-group focused">
                         <label>About Him</label>
-                        <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about him ..."></textarea>
+                        <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about them ..."></textarea>
                     </div>
                 </div>
                 </div>
@@ -192,7 +192,7 @@
                         <div class="col-lg-4">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-country">Country</label>
-                            <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="Country">
+                            <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="Country" value="United Kingdom">
                         </div>
                         </div>
                         <div class="col-lg-4">
@@ -222,6 +222,6 @@
 
     <footer class="footer">
     </footer>
-    
+
     </body>
 </html>

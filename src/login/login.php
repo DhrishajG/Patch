@@ -4,7 +4,7 @@ session_start();
 
 //check if user is logged in
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-  header("Location: ../profile/index.html");
+  header("Location: ../profile/profile.php");
 }
 
 // Include config file
@@ -42,7 +42,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
           $_SESSION["id"] = $row['owner_id'];
           $_SESSION["username"] = $username;
           // Redirect user to welcome page
-          header("Location: ../home/profile.html");
+          header("Location: ../profile/profile.php");
     		//}
     		//else{
     		//	$err = "Invalid username or password.";
