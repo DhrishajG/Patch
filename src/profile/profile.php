@@ -100,7 +100,12 @@ $pet_img = $des["image"];
                     <a class="card-text text-white"></a>
                 </div>
                 <div class="card-body pt-0 pt-md-4">
-                
+                  <div class="row">
+                      <div class="col">
+                      <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+                      </div>
+                      </div>
+                  </div>
                 <div class="text-center">
                     <h3>
                     <?php echo $pet_name; ?><span class="font-weight-light">, <?php echo $pet_age; ?> yo</span>
