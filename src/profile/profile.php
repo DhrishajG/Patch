@@ -47,8 +47,6 @@ $res4 = mysqli_query($conn, $sql_pet_des);
 $des = mysqli_fetch_assoc($res4);
 $pet_about = $des["description"];
 $pet_img = $des["image"];
-echo($pet_about);
-echo($owner_des);
 
 ?>
 
@@ -175,7 +173,7 @@ echo($owner_des);
                     </div>
                     <div class="form-group focused">
                         <label>About Him</label>
-                        <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about them ...", value="<?php echo $pet_about; ?>"></textarea>
+                        <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about them ..."><?php echo $pet_about; ?></textarea>
                     </div>
                 </div>
                 </div>
@@ -253,7 +251,7 @@ echo($owner_des);
                         <div class="col-lg-4">
                         <div class="form-group">
                             <label class="form-control-label" for="input-country">Postal code</label>
-                            <input type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code", value="<?php echo $owner_postcode; ?>">
+                            <input type="text" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code", value="<?php echo $owner_postcode; ?>">
                         </div>
                         </div>
                     </div>
@@ -264,7 +262,7 @@ echo($owner_des);
                     <div class="pl-lg-4">
                     <div class="form-group focused">
                         <label>About Me</label>
-                        <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ...", value="<?php echo $owner_des; ?>"></textarea>
+                        <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about you ..."><?php echo $owner_des; ?></textarea>
                     </div>
                     </div>
                 </form>
