@@ -136,39 +136,39 @@ $_SESSION["pet_des"] = $_POST["pet_des"];
                     <div class="dog-row">
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Name</label>
-                            <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pet's nickname", value="<?php echo $pet_name; ?>">
+                            <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pet's nickname" value="<?php echo $pet_name; ?>">
                         </div>
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Age (years)</label>
-                            age: <input type="number" id="input-age" class="form-control form-control-alternative" placeholder="Pet's age", value="<?php echo $pet_age; ?>" name="age">
+                            age: <input type="number" id="input-age" class="form-control form-control-alternative" placeholder="Pet's age" value="<?php echo $pet_age; ?>" name="age">
                         </div>
                     </div>
                     <div class="dog-row">
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Size (cm)</label>
-                            height: <input type="number" id="input-size" class="form-control form-control-alternative" placeholder="Pet's size", value="<?php echo $pet_height; ?>" name="height">
+                            height: <input type="number" id="input-size" class="form-control form-control-alternative" placeholder="Pet's size" value="<?php echo $pet_height; ?>" name="height">
                         </div>
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Weight (kg)</label>
-                            weight: <input type="number" id="input-weight" class="form-control form-control-alternative" placeholder="Pet's weight",, value="<?php echo $pet_weight; ?>" name="weight">
+                            weight: <input type="number" id="input-weight" class="form-control form-control-alternative" placeholder="Pet's weight" value="<?php echo $pet_weight; ?>" name="weight">
                         </div>
                     </div>
                     <div class="form-group" style="padding: 0 0.4em 0 0.4em;">
                       <label class="form-control-label" for="">Breed</label>
-                      <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pet's breed", value="<?php echo $pet_breed; ?>">
+                      <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pet's breed" value="<?php echo $pet_breed; ?>">
 
                         </select>
                     </div>
                     <div class="dog-row">
                         <div class="form-group dog-col">
                           <label class="form-control-label" for="">Colour</label>
-                          <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pet's colour", value="<?php echo $pet_colour; ?>">
+                          <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pet's colour" value="<?php echo $pet_colour; ?>">
 
                             </select>
                         </div>
                         <div class="form-group dog-col">
                           <label class="form-control-label" for="">Pedigree</label>
-                          <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pedigreed?", value="<?php echo $pet_pedigreed; ?>">
+                          <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pedigreed?" value="<?php echo $pet_pedigreed; ?>">
 
                             </select>
                         </div>
@@ -201,13 +201,13 @@ $_SESSION["pet_des"] = $_POST["pet_des"];
                           <div class="col-lg-6">
                           <div class="form-group focused">
                               <label class="form-control-label" for="input-first-name">First name</label>
-                              <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name", value="<?php echo $owner_name; ?>">
+                              <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="<?php echo $owner_name; ?>">
                           </div>
                           </div>
                           <div class="col-lg-6">
                           <div class="form-group focused">
                               <label class="form-control-label" for="input-last-name">Last name</label>
-                              <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name", value="<?php echo $owner_lastname; ?>">
+                              <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="<?php echo $owner_lastname; ?>">
                           </div>
                           </div>
                       </div>
@@ -215,7 +215,7 @@ $_SESSION["pet_des"] = $_POST["pet_des"];
                         <div class="col-lg-6">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-email">Email address</label>
-                            <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="name@example.com", value="<?php echo $owner_email; ?>">
+                            <input type="email" id="input-email" class="form-control form-control-alternative" placeholder="name@example.com" value="<?php echo $owner_email; ?>">
                         </div>
                         </div>
                     </div>
@@ -228,7 +228,7 @@ $_SESSION["pet_des"] = $_POST["pet_des"];
                         <div class="col-md-12">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-address">Address</label>
-                            <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" type="text", value="<?php echo $owner_add; ?>" name="address">
+                            <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" type="text" value="<?php echo $owner_add; ?>" name="address">
                         </div>
                         </div>
                     </div>
@@ -236,7 +236,7 @@ $_SESSION["pet_des"] = $_POST["pet_des"];
                         <div class="col-lg-4">
                         <div class="form-group focused">
                             <label class="form-control-label" for="input-city">City</label>
-                            <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City", value="<?php echo $owner_city; ?>" name="city">
+                            <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" value="<?php echo $owner_city; ?>" name="city">
                         </div>
                         </div>
                         <div class="col-lg-4">
@@ -248,7 +248,7 @@ $_SESSION["pet_des"] = $_POST["pet_des"];
                         <div class="col-lg-4">
                         <div class="form-group">
                             <label class="form-control-label" for="input-country">Postal code</label>
-                            <input type="text" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code", value="<?php echo $owner_postcode; ?>" name="postcode">
+                            <input type="text" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code" value="<?php echo $owner_postcode; ?>" name="postcode">
                         </div>
                         </div>
                     </div>
