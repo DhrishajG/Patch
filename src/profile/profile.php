@@ -118,46 +118,46 @@ $pet_img = $des["image"];
                     <div class="dog-row">
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Name</label>
-                            <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pet's nickname" value="<?php echo $pet_name; ?>">
+                            <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pet's nickname" value="<?php echo $pet_name; ?>" name="pet_name" id="pet_name">
                         </div>
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Age (years)</label>
-                            age: <input type="number" id="input-age" class="form-control form-control-alternative" placeholder="Pet's age" value="<?php echo $pet_age; ?>" name="age">
+                            age: <input type="number" id="input-age" class="form-control form-control-alternative" placeholder="Pet's age" value="<?php echo $pet_age; ?>" name="age" id="age">
                         </div>
                     </div>
                     <div class="dog-row">
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Size (cm)</label>
-                            height: <input type="number" id="input-size" class="form-control form-control-alternative" placeholder="Pet's size" value="<?php echo $pet_height; ?>" name="height">
+                            height: <input type="number" id="input-size" class="form-control form-control-alternative" placeholder="Pet's size" value="<?php echo $pet_height; ?>" name="height" id="height">
                         </div>
                         <div class="form-group dog-col">
                             <label class="form-control-label" for="">Weight (kg)</label>
-                            weight: <input type="number" id="input-weight" class="form-control form-control-alternative" placeholder="Pet's weight" value="<?php echo $pet_weight; ?>" name="weight">
+                            weight: <input type="number" id="input-weight" class="form-control form-control-alternative" placeholder="Pet's weight" value="<?php echo $pet_weight; ?>" name="weight" id="weight">
                         </div>
                     </div>
                     <div class="form-group" style="padding: 0 0.4em 0 0.4em;">
                       <label class="form-control-label" for="">Breed</label>
-                      <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pet's breed" value="<?php echo $pet_breed; ?>">
+                      <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pet's breed" value="<?php echo $pet_breed; ?>" name="breed" id="breed">
 
                         </select>
                     </div>
                     <div class="dog-row">
                         <div class="form-group dog-col">
                           <label class="form-control-label" for="">Colour</label>
-                          <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pet's colour" value="<?php echo $pet_colour; ?>">
+                          <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pet's colour" value="<?php echo $pet_colour; ?>" name="colour" id="colour">
 
                             </select>
                         </div>
                         <div class="form-group dog-col">
                           <label class="form-control-label" for="">Pedigree</label>
-                          <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pedigreed?" value="<?php echo $pet_pedigreed; ?>">
+                          <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pedigreed?" value="<?php echo $pet_pedigreed; ?>" name="pedigreed", id="pedigreed">
 
                             </select>
                         </div>
                     </div>
                     <div class="form-group focused">
                         <label>About Him</label>
-                        <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about them ..." name="pet_des"><?php echo $pet_about; ?></textarea>
+                        <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about them ..." name="pet_des" id="pet_des"><?php echo $pet_about; ?></textarea>
                     </div>
                 </div>
               </form>
