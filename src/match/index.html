@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--========== BOX ICONS ==========-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <!--========== CSS ==========-->
+        <link rel="stylesheet" href="statstyles.css">
+        <link rel="stylesheet" href="../sidebar/assets/css/styles.css">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+        <!--========== MATCH STYLE ==========-->
+        <link rel="stylesheet" href="../match-card/card-styles.css">
+        <link rel='stylesheet' href='../../fonts/Montserrat-Bold.ttf'>
+        <script src="https://kit.fontawesome.com/fa609a8dad.js" crossorigin="anonymous"></script>
+
+    </head>
+    <body style="margin-top: 0px !important; padding-right: 0px !important; padding-top: 0px !important;">
+
+        <!--========== NAV ==========-->
+        <div class="nav" id="navbar">
+            <nav class="nav__container">
+                <div>
+                    <a href="#" class="nav__link nav__logo">
+                        <i class='bx bxs-disc nav__icon' ></i>
+                        <span class="nav__logo-name">Patch</span>
+                    </a>
+    
+                    <div class="nav__list">
+                        <div class="nav__items">
+                            <h3 class="nav__subtitle">Profile</h3>
+    
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-home nav__icon' ></i>
+                                <span class="nav__name">Home</span>
+                            </a>
+
+                            <a href="../chat/index.html" class="nav__link">
+                                <i class='bx bx-message-rounded nav__icon' ></i>
+                                <span class="nav__name">Messages</span>
+                            </a>
+
+                            <div class="nav__dropdown">
+                                <a href="#" class="nav__link">
+                                    <i class='bx bx-user nav__icon' ></i>
+                                    <span class="nav__name">Profile</span>
+                                    <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                                </a>
+
+                                <div class="nav__dropdown-collapse">
+                                    <div class="nav__dropdown-content">
+                                        <a href="../profile/index.html" class="nav__dropdown-item">My personal</a>
+                                        <a href="../profile/index.html" class="nav__dropdown-item">My pets</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+    
+                        <div class="nav__items">
+                            <h3 class="nav__subtitle">Match</h3>
+
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-compass nav__icon active' ></i>
+                                <span class="nav__name active">Explore patchs</span>
+                            </a>
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-bookmark nav__icon' ></i>
+                                <span class="nav__name">My preferences</span>
+                            </a>
+
+                            <div class="nav__dropdown">
+                                <a href="#" class="nav__link">
+                                    <i class='bx bx-bell nav__icon' ></i>
+                                    <span class="nav__name">Notifications</span>
+                                    <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                                </a>
+
+                                <div class="nav__dropdown-collapse">
+                                    <div class="nav__dropdown-content">
+                                        <a href="#" class="nav__dropdown-item">Blocked</a>
+                                        <a href="#" class="nav__dropdown-item">Silenced</a>
+                                        <a href="#" class="nav__dropdown-item">Activated</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <a href="../home/index.html" class="nav__link nav__logout">
+                    <i class='bx bx-log-out nav__icon' ></i>
+                    <span class="nav__name">Log Out</span>
+                </a>
+            </nav>
+        </div>
+
+        <!--========== CONTENTS ==========-->
+
+        <div class="row">
+
+            <div class="column col-70" style="padding-left: 12%; padding-top: 3em;">
+                <h1 style="color: rgba(82, 95, 127, 0.5); text-align: center;">Find your best matches, and PATCH!</h1>
+                <div id="matching" style="padding-left: 14em; padding-top: 3em;">
+                    <img src="../../images/back-swap.png" style="height: 29em; position: absolute; left: 24%;"/>
+                    <div class="card">
+                        <div class="image">
+                            <img src="../../images/dog.jpg" class="image" />
+                        </div>
+                        <div style="margin-left: 1.5em;">
+                            <div class="title">
+                                <h2 class="name">Bailey</h2>
+                                <h4 class="additional-info">Chiba, 2yo</h2>
+                            </div>
+                            <p class="description">Hello my name isjkskjnsjkf hskjf jk fjkshf Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  kjhfjk</p>
+                            <p class="description" style="color: #626262; font-weight: 400;">more...</p>
+                        </div>
+                    </div>
+                    <div class="match-buttons">
+                        <button class="match"><i class="fa-solid fa-xmark fa-3x"></i></button>
+                        <button class="pass"><i class="fa-solid fa-heart fa-3x fa-beat" style="--fa-animation-duration: 1.3s;"></i></button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Make the PASS animation for this part too -->
+            <div class="column col-30" style="border-left: solid 1px #e9e9e9; height: 100vh; background-color: #fcfcfc40; box-shadow: rgba(0, 0, 0, .05) 1em 0em 1em 1em;">
+                <div class="profile-picture">
+                    <img class="dog-picture" src="dog.jpg" />
+                    <img class="owner-picture" src="owner.jpg" />
+                    <div class="owner-description">
+                        <h2 id="name">Samantha</h2>
+                        <h4 id="age-and-distance"><i class="fa fa-location-dot" style="margin-right: 0.2em;"></i> 1.6km away</h4>
+                    </div>
+                </div>
+                <div class="3-statistics">
+                    <div class="row">
+                        <div class="col">
+                        <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+                            <div>
+                            <span class="heading">22</span>
+                            <span class="description">Patchs</span>
+                            </div>
+                            <div>
+                            <span class="heading">74</span>
+                            <span class="description">Walkings</span>
+                            </div>
+                            <div>
+                            <span class="heading">39</span>
+                            <span class="description">Likes</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dog-section" style="padding-top: 0.5em;">
+
+                    <div class="row-3" style="padding-top: 3em;">
+
+                        <div class="col-3">
+                            <div class="section" style="padding-left: 1em">
+                                <div class="section-description right" style="margin-right: 0.4em;">
+                                    <h5 class="section-title">Breed</h5>
+                                    <h6 class="section-var">Chiuahua</h6>
+                                </div>
+                                <div class="squared-icon"><i class="fa fa-paw"></i></div>
+                            </div>
+                        </div>
+
+                        <div class="col-3">
+                            <div class="section">
+                                <div class="squared-icon"><i class="fa fa-weight-hanging"></i></div>
+                                <div class="section-description">
+                                    <h5 class="section-title">Weight</h5>
+                                    <h6 class="section-var">3kg</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row-3" style="padding-top: 3em;">
+
+                        <div class="col-3">
+                            <div class="section" style="padding-left: 1em">
+                                <div class="section-description right" style="margin-right: 1em;">
+                                    <h5 class="section-title">Color</h5>
+                                    <h6 class="section-var">Brown</h6>
+                                </div>
+                                <div class="squared-icon"><i class="fa fa-eye-dropper"></i></div>
+                            </div>
+                        </div>
+
+                        <div class="col-3">
+                            <div class="section">
+                                <div class="squared-icon"><i class="fa fa-file-signature"></i></div>
+                                <div class="section-description">
+                                    <h5 class="section-title">Pedigree</h5>
+                                    <h6 class="section-var">Yes</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row-3" style="padding-top: 3em;">
+
+                        <div class="col-3">
+                            <div class="section" style="padding-left: 1em">
+                                <div class="section-description right" style="margin-right: 0.5em;">
+                                    <h5 class="section-title">Height</h5>
+                                    <h6 class="section-var">13-50cm</h6>
+                                </div>
+                                <div class="squared-icon"><i class="fa fa-ruler-vertical"></i></div>
+                            </div>
+                        </div>
+
+                        <div class="col-3">
+                            <div class="section">
+                                <div class="squared-icon"><i class="fa fa-location-dot"></i></div>
+                                <div class="section-description">
+                                    <h5 class="section-title">Location</h5>
+                                    <h6 class="section-var">Manchester</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <!--========== MAIN JS ==========-->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
