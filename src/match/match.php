@@ -139,7 +139,7 @@ $pet_img = $des["image"];
                         <div style="margin-left: 1.5em;">
                             <div class="title">
                                 <h2 class="name"><?php echo $pet_name; ?></h2>
-                                <h4 class="additional-info"><?php echo ($pet_breed.",".$pet_age."yo"); ?></h2>
+                                <h4 class="additional-info"><?php echo ($pet_breed.", ".$pet_age."yo"); ?></h2>
                             </div>
                             <p class="description"><?php echo $pet_about; ?></p>
                             <p class="description" style="color: #626262; font-weight: 400;"></p>
@@ -190,8 +190,8 @@ $pet_img = $des["image"];
                             <div class="section">
                                 <div class="squared-icon"><i class="fa fa-weight-hanging"></i></div>
                                 <div class="section-description">
-                                    <h5 class="section-title">Weight</h5>
-                                    <h6 class="section-var">3kg</h6>
+                                    <h5 class="section-title">Weight (kg)</h5>
+                                    <h6 class="section-var"><?php echo $_SESSION["pet_weight"]; ?></h6>
                                 </div>
                             </div>
                         </div>
