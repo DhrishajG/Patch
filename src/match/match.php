@@ -11,6 +11,7 @@ while ($display === $_SESSION["pid"]) {
 $sql_get_pet = "SELECT * FROM pet_base_info WHERE pet_id = '$display'";
 $result = mysqli_query($conn,$sql_get_pet);
 $pet = mysqli_fetch_assoc($result);
+$pet_name = $pet["pet_name"];
 $pet_weight = $pet["weight"];
 $pet_height = $pet["height"];
 $pet_age = $pet["age"];
