@@ -25,7 +25,7 @@ else{
   $pet_pedigreed = "No";
 }
 
-$sql_pet_des = "SELECT * FROM pet_profile WHERE pet_id = '$pid'";
+$sql_pet_des = "SELECT * FROM pet_profile WHERE pet_id = '$display'";
 $res = mysqli_query($conn, $sql_pet_des);
 $des = mysqli_fetch_assoc($res);
 $pet_about = $des["description"];
