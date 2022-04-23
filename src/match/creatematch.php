@@ -12,8 +12,8 @@ $numrows = mysqli_num_rows($result);
 if($numrows < 1){
   $sql_add = "INSERT INTO matches (pet_id_key, pet_id_matched) VALUES ('$pid', '$display')";
   $res = mysqli_query($conn, $sql_add);
-  header("Location: match.php");
 }
 
+header("Location: match.php");
 
  ?>
