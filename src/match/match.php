@@ -148,8 +148,8 @@ $pet_img = $des["image"];
             <!-- Make the PASS animation for this part too -->
             <div class="column col-30" style="border-left: solid 1px #e9e9e9; height: 100vh; background-color: #fcfcfc40; box-shadow: rgba(0, 0, 0, .05) 1em 0em 1em 1em;">
                 <div class="profile-picture">
-                    <img class="dog-picture" src="dog.jpg" />
-                    <img class="owner-picture" src="owner.jpg" />
+                    <img class="dog-picture" src="<?php echo $_SESSION["pet_img"]; ?>" />
+                    <img class="owner-picture" src="<?php echo $_SESSION["owner_img"]; ?>" />
                     <div class="owner-description">
                         <h2 id="name"><?php echo $_SESSION["pet_name"]; ?></h2>
                         <h4 id="age-and-distance"><i class="fa fa-location-dot" style="margin-right: 0.2em;"></i></h4>
