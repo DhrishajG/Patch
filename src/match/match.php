@@ -4,7 +4,9 @@ require_once "../../config.php";
 session_start();
 
 $display = rand(1,5);
-
+while($_SESSION["pid"] === $display){
+  $display = rand(1,5);
+}
 
 $sql_get_pet = "SELECT * FROM pet_base_info WHERE pet_id = '$display'";
 $result = mysqli_query($conn,$sql_get_pet);
