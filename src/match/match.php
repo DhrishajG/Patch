@@ -140,8 +140,8 @@ $pet_img = $des["image"];
                         </div>
                     </div>
                     <div class="match-buttons">
-                        <button class="match" onclick="window.location.href='creatematch.php'"><i class="fa-solid fa-xmark fa-3x"></i></button>
-                        <button class="pass" onclick="window.location.href='match.php'"><i class="fa-solid fa-heart fa-3x fa-beat" style="--fa-animation-duration: 1.3s;"></i></button>
+                        <button class="match" onclick="window.location.href='match.php'"><i class="fa-solid fa-xmark fa-3x"></i></button>
+                        <button class="pass" onclick="window.location.href='creatematch.php'"><i class="fa-solid fa-heart fa-3x fa-beat" style="--fa-animation-duration: 1.3s;"></i></button>
                     </div>
                 </div>
 
