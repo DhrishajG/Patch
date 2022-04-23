@@ -4,9 +4,15 @@ require_once "../../config.php";
 session_start();
 
 $display = rand(1,5);
-while($_SESSION["pid"] === $display){
+$c = false;
+while($c === true){
   $display = rand(1,5);
+  if(array_search($display, $_SESSION["matched"]) === false){
+    $c = true;
+  }
 }
+
+array_push($_SESSION["matched"], $display)
 
 $_SESSION["display"] = $display;
 

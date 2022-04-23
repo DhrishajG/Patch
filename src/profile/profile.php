@@ -65,6 +65,7 @@ $_SESSION["city"] = $owner_city;
 $_SESSION["postcode"] = $owner_postcode;
 $_SESSION["owner_des"] = $owner_des;
 $_SESSION["owner_img"] = $owner_img;
+$_SESSION["matched"] = array($pid);
 
 ?>
 
