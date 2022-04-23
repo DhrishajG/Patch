@@ -1,3 +1,38 @@
+<?php
+
+require_once "../../config.php";
+session_start();
+
+$display = rand(1, 5);
+while ($display === $_SESSION["pid"]) {
+  $display = rand(1, 5);
+}
+
+$sql_get_pet = "SELECT * FROM pet_base_info WHERE pet_id = '$display'";
+$result = mysqli_query($conn,$sql_get_pet);
+$pet = mysqli_fetch_assoc($result);
+$pet_weight = $pet["weight"];
+$pet_height = $pet["height"];
+$pet_age = $pet["age"];
+$pet_breed = $pet["breed"];
+$pet_colour = $pet["colour"];
+$pedigreed = $pet["pedigreed"];
+$pet_pedigreed = "";
+if($pedigreed===1){
+  $pet_pedigreed = "Yes";
+}
+else{
+  $pet_pedigreed = "No";
+}
+
+$sql_pet_des = "SELECT * FROM pet_profile WHERE pet_id = '$pid'";
+$res = mysqli_query($conn, $sql_pet_des);
+$des = mysqli_fetch_assoc($res);
+$pet_about = $des["description"];
+$pet_img = $des["image"];
+
+ ?>
+
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -27,12 +62,12 @@
                         <i class='bx bxs-disc nav__icon' ></i>
                         <span class="nav__logo-name">Patch</span>
                     </a>
-    
+
                     <div class="nav__list">
                         <div class="nav__items">
                             <h3 class="nav__subtitle">Profile</h3>
-    
-                            <a href="#" class="nav__link">
+
+                            <a href="../home/index.html" class="nav__link">
                                 <i class='bx bx-home nav__icon' ></i>
                                 <span class="nav__name">Home</span>
                             </a>
@@ -51,14 +86,14 @@
 
                                 <div class="nav__dropdown-collapse">
                                     <div class="nav__dropdown-content">
-                                        <a href="../profile/index.html" class="nav__dropdown-item">My personal</a>
-                                        <a href="../profile/index.html" class="nav__dropdown-item">My pets</a>
+                                        <a href="../profile/profile.php" class="nav__dropdown-item">My personal</a>
+                                        <a href="../profile/profile.php" class="nav__dropdown-item">My pets</a>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
-    
+
                         <div class="nav__items">
                             <h3 class="nav__subtitle">Match</h3>
 
@@ -66,25 +101,7 @@
                                 <i class='bx bx-compass nav__icon active' ></i>
                                 <span class="nav__name active">Explore patchs</span>
                             </a>
-                            <a href="#" class="nav__link">
-                                <i class='bx bx-bookmark nav__icon' ></i>
-                                <span class="nav__name">My preferences</span>
-                            </a>
 
-                            <div class="nav__dropdown">
-                                <a href="#" class="nav__link">
-                                    <i class='bx bx-bell nav__icon' ></i>
-                                    <span class="nav__name">Notifications</span>
-                                    <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
-                                </a>
-
-                                <div class="nav__dropdown-collapse">
-                                    <div class="nav__dropdown-content">
-                                        <a href="#" class="nav__dropdown-item">Blocked</a>
-                                        <a href="#" class="nav__dropdown-item">Silenced</a>
-                                        <a href="#" class="nav__dropdown-item">Activated</a>
-                                    </div>
-                                </div>
 
                             </div>
 
@@ -92,7 +109,7 @@
                     </div>
                 </div>
 
-                <a href="../home/index.html" class="nav__link nav__logout">
+                <a href="../home/logout.php" class="nav__link nav__logout">
                     <i class='bx bx-log-out nav__icon' ></i>
                     <span class="nav__name">Log Out</span>
                 </a>
@@ -106,17 +123,16 @@
             <div class="column col-70" style="padding-left: 12%; padding-top: 3em;">
                 <h1 style="color: rgba(82, 95, 127, 0.5); text-align: center;">Find your best matches, and PATCH!</h1>
                 <div id="matching" style="padding-left: 14em; padding-top: 3em;">
-                    <img src="../../images/back-swap.png" style="height: 29em; position: absolute; left: 24%;"/>
                     <div class="card">
                         <div class="image">
-                            <img src="../../images/dog.jpg" class="image" />
+                            <img src="<?php echo $pet_img; ?>" class="image" />
                         </div>
                         <div style="margin-left: 1.5em;">
                             <div class="title">
-                                <h2 class="name">Bailey</h2>
-                                <h4 class="additional-info">Chiba, 2yo</h2>
+                                <h2 class="name"><?php echo $pet_name; ?></h2>
+                                <h4 class="additional-info"><?php echo ($pet_breed.",".$pet_age." yo"); ?></h2>
                             </div>
-                            <p class="description">Hello my name isjkskjnsjkf hskjf jk fjkshf Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  kjhfjk</p>
+                            <p class="description"><?php echo $pet_about; ?></p>
                             <p class="description" style="color: #626262; font-weight: 400;">more...</p>
                         </div>
                     </div>
@@ -134,26 +150,15 @@
                     <img class="dog-picture" src="dog.jpg" />
                     <img class="owner-picture" src="owner.jpg" />
                     <div class="owner-description">
-                        <h2 id="name">Samantha</h2>
-                        <h4 id="age-and-distance"><i class="fa fa-location-dot" style="margin-right: 0.2em;"></i> 1.6km away</h4>
+                        <h2 id="name"><?php echo $_SESSION["pet_name"]; ?></h2>
+                        <h4 id="age-and-distance"><i class="fa fa-location-dot" style="margin-right: 0.2em;"></i></h4>
                     </div>
                 </div>
                 <div class="3-statistics">
                     <div class="row">
                         <div class="col">
                         <div class="card-profile-stats d-flex justify-content-center mt-md-5">
-                            <div>
-                            <span class="heading">22</span>
-                            <span class="description">Patchs</span>
-                            </div>
-                            <div>
-                            <span class="heading">74</span>
-                            <span class="description">Walkings</span>
-                            </div>
-                            <div>
-                            <span class="heading">39</span>
-                            <span class="description">Likes</span>
-                            </div>
+
                         </div>
                         </div>
                     </div>
@@ -166,7 +171,7 @@
                             <div class="section" style="padding-left: 1em">
                                 <div class="section-description right" style="margin-right: 0.4em;">
                                     <h5 class="section-title">Breed</h5>
-                                    <h6 class="section-var">Chiuahua</h6>
+                                    <h6 class="section-var"><?php echo $_SESSION["pet_breed"]; ?></h6>
                                 </div>
                                 <div class="squared-icon"><i class="fa fa-paw"></i></div>
                             </div>
@@ -190,7 +195,7 @@
                             <div class="section" style="padding-left: 1em">
                                 <div class="section-description right" style="margin-right: 1em;">
                                     <h5 class="section-title">Color</h5>
-                                    <h6 class="section-var">Brown</h6>
+                                    <h6 class="section-var"><?php echo $_SESSION["pet_colour"]; ?></h6>
                                 </div>
                                 <div class="squared-icon"><i class="fa fa-eye-dropper"></i></div>
                             </div>
@@ -201,7 +206,7 @@
                                 <div class="squared-icon"><i class="fa fa-file-signature"></i></div>
                                 <div class="section-description">
                                     <h5 class="section-title">Pedigree</h5>
-                                    <h6 class="section-var">Yes</h6>
+                                    <h6 class="section-var"><?php echo $_SESSION["pet_pedigreed"]; ?></h6>
                                 </div>
                             </div>
                         </div>
@@ -213,8 +218,8 @@
                         <div class="col-3">
                             <div class="section" style="padding-left: 1em">
                                 <div class="section-description right" style="margin-right: 0.5em;">
-                                    <h5 class="section-title">Height</h5>
-                                    <h6 class="section-var">13-50cm</h6>
+                                    <h5 class="section-title">Height(cm)</h5>
+                                    <h6 class="section-var"><?php echo $_SESSION["pet_height"]; ?></h6>
                                 </div>
                                 <div class="squared-icon"><i class="fa fa-ruler-vertical"></i></div>
                             </div>

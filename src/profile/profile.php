@@ -16,6 +16,7 @@ $owner_add = $owner["address"];
 $owner_postcode = $owner["postcode"];
 $owner_city = $owner["city"];
 $owner_des = $owner["about"];
+$owner_img = $owner["owner_img"];
 
 $sql_pet_id = "SELECT * FROM main WHERE owner_id = '$uid'";
 $res2 = mysqli_query($conn, $sql_pet_id);
@@ -46,7 +47,24 @@ $des = mysqli_fetch_assoc($res4);
 $pet_about = $des["description"];
 $pet_img = $des["image"];
 
-
+$_SESSION["pid"] = $pid;
+$_SESSION["pet_name"] = $pet_name;
+$_SESSION["pet_weight"] = $pet_weight;
+$_SESSION["pet_height"] = $pet_height;
+$_SESSION["pet_age"] = $pet_age;
+$_SESSION["pet_breed"] = $pet_breed;
+$_SESSION["pet_colour"] = $pet_colour;
+$_SESSION["pet_pedigreed"] = $pet_pedigreed;
+$_SESSION["pet_des"] = $pet_des;
+$_SESSION["pet_img"] = $pet_img;
+$_SESSION["owner_name"] = $owner_name;
+$_SESSION["owner_lastname"] = $owner_lastname;
+$_SESSION["address"] = $owner_add;
+$_SESSION["email"] = $owner_email;
+$_SESSION["city"] = $owner_city;
+$_SESSION["postcode"] = $owner_postcode;
+$_SESSION["owner_des"] = $owner_des;
+$_SESSION["owner_img"] = $owner_img;
 
 ?>
 
@@ -71,7 +89,7 @@ $pet_img = $des["image"];
         <!-- Header container -->
         <div class="container-fluid d-flex align-items-center">
             <h1 style="position: absolute; top: 1em; color: white;">My profile</h1>
-            <a class="go-back" href="test.php" onclick="openPage()">
+            <a class="go-back" href="../match/match.php" onclick="openPage()">
                 <span class="fa fa-arrow-left" style="margin-right: .7em;"></span>Go to homepage
             </a>
             <div class="row">
@@ -150,7 +168,7 @@ $pet_img = $des["image"];
                         </div>
                         <div class="form-group dog-col">
                           <label class="form-control-label" for="">Pedigree</label>
-                          <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pedigreed?" value="<?php echo $pet_pedigreed; ?>" name="pedigreed", id="pedigreed">
+                          <input type="text" id="input-name" class="form-control form-control-alternative" placeholder="Pedigreed?" value="<?php echo $pet_pedigreed; ?>" name="pedigreed" id="pedigreed">
 
                             </select>
                         </div>
@@ -259,7 +277,7 @@ $pet_img = $des["image"];
 
     <script>
       function openPage(){
-        window.location.href = "test.php";
+        window.location.href = "../match/match.php";
       };
     </script>
 </html>
