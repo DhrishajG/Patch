@@ -8,6 +8,8 @@ while($_SESSION["pid"] === $display){
   $display = rand(1,5);
 }
 
+$_SESSION["display"] = $display;
+
 $sql_get_pet = "SELECT * FROM pet_base_info WHERE pet_id = '$display'";
 $result = mysqli_query($conn,$sql_get_pet);
 $pet = mysqli_fetch_assoc($result);
@@ -131,15 +133,15 @@ $pet_img = $des["image"];
                         <div style="margin-left: 1.5em;">
                             <div class="title">
                                 <h2 class="name"><?php echo $pet_name; ?></h2>
-                                <h4 class="additional-info"><?php echo ($pet_breed.",".$pet_age." yo"); ?></h2>
+                                <h4 class="additional-info"><?php echo ($pet_breed.",".$pet_age."yo"); ?></h2>
                             </div>
                             <p class="description"><?php echo $pet_about; ?></p>
-                            <p class="description" style="color: #626262; font-weight: 400;">more...</p>
+                            <p class="description" style="color: #626262; font-weight: 400;"></p>
                         </div>
                     </div>
                     <div class="match-buttons">
-                        <button class="match"><i class="fa-solid fa-xmark fa-3x"></i></button>
-                        <button class="pass"><i class="fa-solid fa-heart fa-3x fa-beat" style="--fa-animation-duration: 1.3s;"></i></button>
+                        <button class="match" onclick="window.location.href='creatematch.php'"><i class="fa-solid fa-xmark fa-3x"></i></button>
+                        <button class="pass" onclick="window.location.href='match.php'"><i class="fa-solid fa-heart fa-3x fa-beat" style="--fa-animation-duration: 1.3s;"></i></button>
                     </div>
                 </div>
 
