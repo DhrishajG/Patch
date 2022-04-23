@@ -12,7 +12,7 @@ while($c === true){
   }
 }
 
-array_push($_SESSION["matched"], $display)
+array_push($_SESSION["matched"], $display);
 
 $_SESSION["display"] = $display;
 
