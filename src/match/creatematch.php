@@ -15,6 +15,5 @@ if($numrows < 1){
   header("Location: match.php");
 }
 
-if()
 
  ?>
