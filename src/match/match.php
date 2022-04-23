@@ -190,7 +190,7 @@ $pet_img = $des["image"];
                             <div class="section">
                                 <div class="squared-icon"><i class="fa fa-weight-hanging"></i></div>
                                 <div class="section-description">
-                                    <h5 class="section-title">Weight (kg)</h5>
+                                    <h5 class="section-title">Weight</h5>
                                     <h6 class="section-var"><?php echo $_SESSION["pet_weight"]; ?></h6>
                                 </div>
                             </div>
@@ -227,7 +227,7 @@ $pet_img = $des["image"];
                         <div class="col-3">
                             <div class="section" style="padding-left: 1em">
                                 <div class="section-description right" style="margin-right: 0.5em;">
-                                    <h5 class="section-title">Height(cm)</h5>
+                                    <h5 class="section-title">Height</h5>
                                     <h6 class="section-var"><?php echo $_SESSION["pet_height"]; ?></h6>
                                 </div>
                                 <div class="squared-icon"><i class="fa fa-ruler-vertical"></i></div>
