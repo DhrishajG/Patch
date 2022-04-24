@@ -157,15 +157,7 @@
                  </div>
              </div>
              <div class="content">
-                 <div class="contact-profile">
-                     <img src="../images/profile.php" alt="" />
-                     <p>Patch</p>
-                     <div class="social-media">
-                         <i class="fa fa-facebook" aria-hidden="true"></i>
-                         <i class="fa fa-twitter" aria-hidden="true"></i>
-                         <i class="fa fa-instagram" aria-hidden="true"></i>
-                     </div>
-                 </div>
+                 
                  <div class="messages">
                      <ul>
                          <li class="replies">
