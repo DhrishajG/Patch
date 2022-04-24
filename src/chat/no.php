@@ -158,8 +158,8 @@
              </div>
              <div class="content">
                  <div class="contact-profile">
-                     <img src="<?php echo $owner_img; ?>" alt="" />
-                     <p><?php echo $owner_name; ?></p>
+                     <img src="../images/logo.php" alt="" />
+                     <p>Patch</p>
                      <div class="social-media">
                          <i class="fa fa-facebook" aria-hidden="true"></i>
                          <i class="fa fa-twitter" aria-hidden="true"></i>
@@ -176,7 +176,7 @@
                              <img src="<?php echo $owner_img; ?>" alt="" />
                              <p>Go Back and patch with someone so that we can get you started :D</p>
                          </li>
-                         
+
                      </ul>
                  </div>
                  <div class="message-input">
