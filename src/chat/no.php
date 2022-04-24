@@ -146,7 +146,7 @@
                          <li class="contact active">
                              <div class="wrap">
                                  <span class="contact-status busy"></span>
-                                 <img src="../images/logo.png" alt="" />
+                                 <img src="../images/profile.png" alt="" />
                                  <div class="meta">
                                      <p class="name">Patch</p>
                                      <p class="preview"></p>
@@ -158,7 +158,7 @@
              </div>
              <div class="content">
                  <div class="contact-profile">
-                     <img src="../images/logo.php" alt="" />
+                     <img src="../images/profile.php" alt="" />
                      <p>Patch</p>
                      <div class="social-media">
                          <i class="fa fa-facebook" aria-hidden="true"></i>
