@@ -175,7 +175,7 @@ $_SESSION["matched"] = array($pid);
                         </div>
                     </div>
                     <div class="form-group focused">
-                        <label>About Him</label>
+                        <label>About Them</label>
                         <textarea rows="4" class="form-control form-control-alternative" placeholder="A few words about them ..." name="pet_des" id="pet_des"><?php echo $pet_about; ?></textarea>
                     </div>
                 </div>
