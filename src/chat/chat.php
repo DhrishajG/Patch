@@ -1,3 +1,32 @@
+<?php
+
+require_once "../../config.php";
+session_start();
+
+$pet_id = $_SESSION["pid"];
+$sql_matched_id = "SELECT * FROM matches WHERE pet_id_key = '$pet_id'";
+$result = mysqli_query($conn, $sql_matched_id);
+$match = mysqli_fetch_assoc($result);
+$pid = $match["pet_id_matched"];
+
+$sql_pet = "SELECT * FROM pet_base_info WHERE pet_id = '$pid'";
+$rp = mysqli_query($conn, $sql_pet);
+$pet = mysqli_fetch_assoc($rp);
+$pet_name = $pet["pet_name"];
+
+$sql_get_owner = "SELECT * FROM main WHERE pet_id = '$pid'";
+$res = mysqli_query($conn, $sql_get_owner);
+$row = mysqli_fetch_assoc($res);
+$id = $row["owner_id"];
+
+$sql_get_owner_info = "SELECT * FROM owner_info WHERE owner_id='$id'";
+$r = mysqli_query($conn, $sql_get_owner_info);
+$owner = mysqli_fetch_assoc($r);
+$owner_name = $owner["owner_name"];
+$owner_img = $owner["owner_img"];
+
+ ?>
+
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -12,11 +41,11 @@
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        
+
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-        
+
         <script src='//production-assets.codepen.io/assets/editor/live/console_runner-079c09a0e3b9ff743e39ee2d5637b9216b3545af0de366d4b9aad9dc87e26bfd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/events_runner-73716630c22bbc8cff4bd0f07b135f00a0bdc5d14629260c3ec49e5606f98fdd.js'></script><script src='//production-assets.codepen.io/assets/editor/live/css_live_reload_init-2c0dc5167d60a5af3ee189d570b1835129687ea2a61bee3513dee3a50c115a77.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/emilcarlsson/pen/ZOQZaV?limit=all&page=74&q=contact+" />
         <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,300' rel='stylesheet' type='text/css'>
         <script src="https://use.typekit.net/hoy3lrg.js"></script>
@@ -36,12 +65,12 @@
                         <i class='bx bxs-disc nav__icon' ></i>
                         <span class="nav__logo-name">Patch</span>
                     </a>
-    
+
                     <div class="nav__list">
                         <div class="nav__items">
                             <h3 class="nav__subtitle" style="font-weight: 600;">Profile</h3>
-    
-                            <a href="#" class="nav__link">
+
+                            <a href="../home/index.html" class="nav__link">
                                 <i class='bx bx-home nav__icon' ></i>
                                 <span class="nav__name">Home</span>
                             </a>
@@ -52,7 +81,7 @@
                             </a>
 
                             <div class="nav__dropdown">
-                                <a href="#" class="nav__link">
+                                <a href="../profile/profile.php" class="nav__link">
                                     <i class='bx bx-user nav__icon' ></i>
                                     <span class="nav__name">Profile</span>
                                     <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
@@ -60,24 +89,20 @@
 
                                 <div class="nav__dropdown-collapse">
                                     <div class="nav__dropdown-content">
-                                        <a href="../profile/index.html" class="nav__dropdown-item">My personal</a>
-                                        <a href="../profile/index.html" class="nav__dropdown-item">My pets</a>
+                                        <a href="../profile/profile.php" class="nav__dropdown-item">My personal</a>
+                                        <a href="../profile/profile.php" class="nav__dropdown-item">My pets</a>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
-    
+
                         <div class="nav__items">
                             <h3 class="nav__subtitle" style="font-weight: 600;">Match</h3>
 
-                            <a href="../match/index.html" class="nav__link">
+                            <a href="../match/match.php" class="nav__link">
                                 <i class='bx bx-compass nav__icon' ></i>
                                 <span class="nav__name">Explore patchs</span>
-                            </a>
-                            <a href="#" class="nav__link">
-                                <i class='bx bx-bookmark nav__icon' ></i>
-                                <span class="nav__name">My preferences</span>
                             </a>
 
                             <div class="nav__dropdown">
@@ -101,7 +126,7 @@
                     </div>
                 </div>
 
-                <a href="../home/index.html" class="nav__link nav__logout">
+                <a href="../home/logout.php" class="nav__link nav__logout">
                     <i class='bx bx-log-out nav__icon' ></i>
                     <span class="nav__name">Log Out</span>
                 </a>
@@ -114,8 +139,8 @@
             <div id="sidepanel">
                 <div id="profile">
                     <div class="wrap">
-                        <img id="profile-img" src="http://emilcarlsson.se/assets/mikeross.png" class="online" alt="" />
-                        <p>Mike Ross</p>
+                        <img id="profile-img" src="<?php echo $_SESSION["owner_img"]; ?>" class="online" alt="" />
+                        <p><?php echo $_SESSION["owner_name"]; ?></p>
                         <div id="status-options">
                             <ul>
                                 <li id="status-online" class="active"><span class="status-circle"></span> <p>Online</p></li>
@@ -140,103 +165,13 @@
                 </div>
                 <div id="contacts">
                     <ul>
-                        <li class="contact">
-                            <div class="wrap">
-                                <span class="contact-status online"></span>
-                                <img src="http://emilcarlsson.se/assets/louislitt.png" alt="" />
-                                <div class="meta">
-                                    <p class="name">Louis Litt</p>
-                                    <p class="preview">You just got LITT up, Mike.</p>
-                                </div>
-                            </div>
-                        </li>
                         <li class="contact active">
                             <div class="wrap">
                                 <span class="contact-status busy"></span>
-                                <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
+                                <img src="<?php echo $owner_img; ?>" alt="" />
                                 <div class="meta">
-                                    <p class="name">Harvey Specter</p>
-                                    <p class="preview">Wrong. You take the gun, or you pull out a bigger one. Or, you call their bluff. Or, you do any one of a hundred and forty six other things.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="contact">
-                            <div class="wrap">
-                                <span class="contact-status away"></span>
-                                <img src="http://emilcarlsson.se/assets/rachelzane.png" alt="" />
-                                <div class="meta">
-                                    <p class="name">Rachel Zane</p>
-                                    <p class="preview">I was thinking that we could have chicken tonight, sounds good?</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="contact">
-                            <div class="wrap">
-                                <span class="contact-status online"></span>
-                                <img src="http://emilcarlsson.se/assets/donnapaulsen.png" alt="" />
-                                <div class="meta">
-                                    <p class="name">Donna Paulsen</p>
-                                    <p class="preview">Mike, I know everything! I'm Donna..</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="contact">
-                            <div class="wrap">
-                                <span class="contact-status busy"></span>
-                                <img src="http://emilcarlsson.se/assets/jessicapearson.png" alt="" />
-                                <div class="meta">
-                                    <p class="name">Jessica Pearson</p>
-                                    <p class="preview">Have you finished the draft on the Hinsenburg deal?</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="contact">
-                            <div class="wrap">
-                                <span class="contact-status"></span>
-                                <img src="http://emilcarlsson.se/assets/haroldgunderson.png" alt="" />
-                                <div class="meta">
-                                    <p class="name">Harold Gunderson</p>
-                                    <p class="preview">Thanks Mike! :)</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="contact">
-                            <div class="wrap">
-                                <span class="contact-status"></span>
-                                <img src="http://emilcarlsson.se/assets/danielhardman.png" alt="" />
-                                <div class="meta">
-                                    <p class="name">Daniel Hardman</p>
-                                    <p class="preview">We'll meet again, Mike. Tell Jessica I said 'Hi'.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="contact">
-                            <div class="wrap">
-                                <span class="contact-status busy"></span>
-                                <img src="http://emilcarlsson.se/assets/katrinabennett.png" alt="" />
-                                <div class="meta">
-                                    <p class="name">Katrina Bennett</p>
-                                    <p class="preview">I've sent you the files for the Garrett trial.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="contact">
-                            <div class="wrap">
-                                <span class="contact-status"></span>
-                                <img src="http://emilcarlsson.se/assets/charlesforstman.png" alt="" />
-                                <div class="meta">
-                                    <p class="name">Charles Forstman</p>
-                                    <p class="preview">Mike, this isn't over.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="contact">
-                            <div class="wrap">
-                                <span class="contact-status"></span>
-                                <img src="http://emilcarlsson.se/assets/jonathansidwell.png" alt="" />
-                                <div class="meta">
-                                    <p class="name">Jonathan Sidwell</p>
-                                    <p class="preview"><span>You:</span> That's bullshit. This deal is solid.</p>
+                                    <p class="name"><?php echo $owner_name; ?></p>
+                                    <p class="preview"><?php echo ("Pet: ".$pet_name); ?></p>
                                 </div>
                             </div>
                         </li>
@@ -245,8 +180,8 @@
             </div>
             <div class="content">
                 <div class="contact-profile">
-                    <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
-                    <p>Harvey Specter</p>
+                    <img src="<?php echo $owner_img; ?>" alt="" />
+                    <p><?php echo $owner_name; ?></p>
                     <div class="social-media">
                         <i class="fa fa-facebook" aria-hidden="true"></i>
                         <i class="fa fa-twitter" aria-hidden="true"></i>
@@ -255,37 +190,21 @@
                 </div>
                 <div class="messages">
                     <ul>
-                        <li class="sent">
-                            <img src="http://emilcarlsson.se/assets/mikeross.png" alt="" />
-                            <p>How the hell am I supposed to get a jury to believe you when I am not even sure that I do?!</p>
+                        <li class="replies">
+                            <img src="<?php echo $owner_img; ?>" alt="" />
+                            <p>Hi!</p>
                         </li>
                         <li class="replies">
-                            <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
-                            <p>When you're backed against the wall, break the god damn thing down.</p>
-                        </li>
-                        <li class="replies">
-                            <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
-                            <p>Excuses don't win championships.</p>
+                            <img src="<?php echo $owner_img; ?>" alt="" />
+                            <p>Your pet is really cute! I'm so glad we patched :D</p>
                         </li>
                         <li class="sent">
-                            <img src="http://emilcarlsson.se/assets/mikeross.png" alt="" />
-                            <p>Oh yeah, did Michael Jordan tell you that?</p>
-                        </li>
-                        <li class="replies">
-                            <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
-                            <p>No, I told him that.</p>
-                        </li>
-                        <li class="replies">
-                            <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
-                            <p>What are your choices when someone puts a gun to your head?</p>
+                            <img src="<?php echo $_SESSION["owner_img"]; ?>" alt="" />
+                            <p>Hi! </p>
                         </li>
                         <li class="sent">
-                            <img src="http://emilcarlsson.se/assets/mikeross.png" alt="" />
-                            <p>What are you talking about? You do what they say or they shoot you.</p>
-                        </li>
-                        <li class="replies">
-                            <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
-                            <p>Wrong. You take the gun, or you pull out a bigger one. Or, you call their bluff. Or, you do any one of a hundred and forty six other things.</p>
+                            <img src="<?php echo $_SESSION["owner_img"]; ?>" alt="" />
+                            <p>Nice to meet you! I'm glad we "patched" haha!</p>
                         </li>
                     </ul>
                 </div>
@@ -319,7 +238,7 @@
             $("#status-busy").removeClass("active");
             $("#status-offline").removeClass("active");
             $(this).addClass("active");
-            
+
             if($("#status-online").hasClass("active")) {
                 $("#profile-img").addClass("online");
             } else if ($("#status-away").hasClass("active")) {
@@ -331,7 +250,7 @@
             } else {
                 $("#profile-img").removeClass();
             };
-            
+
             $("#status-options").removeClass("active");
         });
 
@@ -340,7 +259,7 @@
             if($.trim(message) == '') {
                 return false;
             }
-            $('<li class="sent"><img src="http://emilcarlsson.se/assets/mikeross.png" alt="" /><p>' + message + '</p></li>').appendTo($('.messages ul'));
+            $('<li class="sent"><img src="<?php echo $_SESSION["owner_img"]; ?>" alt="" /><p>' + message + '</p></li>').appendTo($('.messages ul'));
             $('.message-input input').val(null);
             $('.contact.active .preview').html('<span>You: </span>' + message);
             $(".messages").animate({ scrollTop: $(document).height() }, "fast");

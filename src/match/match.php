@@ -81,7 +81,7 @@ $pet_img = $des["image"];
                                 <span class="nav__name">Home</span>
                             </a>
 
-                            <a href="../chat/index.html" class="nav__link">
+                            <a href="../chat/chat.php" class="nav__link">
                                 <i class='bx bx-message-rounded nav__icon' ></i>
                                 <span class="nav__name">Messages</span>
                             </a>
@@ -110,8 +110,20 @@ $pet_img = $des["image"];
                                 <i class='bx bx-compass nav__icon active' ></i>
                                 <span class="nav__name active">Explore patchs</span>
                             </a>
+                        </div>
+                        <div class="nav__dropdown">
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-bell nav__icon' ></i>
+                                <span class="nav__name">Notifications</span>
+                                <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                            </a>
 
-
+                            <div class="nav__dropdown-collapse">
+                                <div class="nav__dropdown-content">
+                                    <a href="#" class="nav__dropdown-item">Blocked</a>
+                                    <a href="#" class="nav__dropdown-item">Silenced</a>
+                                    <a href="#" class="nav__dropdown-item">Activated</a>
+                                </div>
                             </div>
 
                         </div>
