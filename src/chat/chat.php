@@ -6,24 +6,30 @@ session_start();
 $pet_id = $_SESSION["pid"];
 $sql_matched_id = "SELECT * FROM matches WHERE pet_id_key = '$pet_id'";
 $result = mysqli_query($conn, $sql_matched_id);
-$match = mysqli_fetch_assoc($result);
-$pid = $match["pet_id_matched"];
+$numrows = mysqli_num_rows($result);
+if($numrows === 1){
+  $match = mysqli_fetch_assoc($result);
+  $pid = $match["pet_id_matched"];
 
-$sql_pet = "SELECT * FROM pet_base_info WHERE pet_id = '$pid'";
-$rp = mysqli_query($conn, $sql_pet);
-$pet = mysqli_fetch_assoc($rp);
-$pet_name = $pet["pet_name"];
+  $sql_pet = "SELECT * FROM pet_base_info WHERE pet_id = '$pid'";
+  $rp = mysqli_query($conn, $sql_pet);
+  $pet = mysqli_fetch_assoc($rp);
+  $pet_name = $pet["pet_name"];
 
-$sql_get_owner = "SELECT * FROM main WHERE pet_id = '$pid'";
-$res = mysqli_query($conn, $sql_get_owner);
-$row = mysqli_fetch_assoc($res);
-$id = $row["owner_id"];
+  $sql_get_owner = "SELECT * FROM main WHERE pet_id = '$pid'";
+  $res = mysqli_query($conn, $sql_get_owner);
+  $row = mysqli_fetch_assoc($res);
+  $id = $row["owner_id"];
 
-$sql_get_owner_info = "SELECT * FROM owner_info WHERE owner_id='$id'";
-$r = mysqli_query($conn, $sql_get_owner_info);
-$owner = mysqli_fetch_assoc($r);
-$owner_name = $owner["owner_name"];
-$owner_img = $owner["owner_img"];
+  $sql_get_owner_info = "SELECT * FROM owner_info WHERE owner_id='$id'";
+  $r = mysqli_query($conn, $sql_get_owner_info);
+  $owner = mysqli_fetch_assoc($r);
+  $owner_name = $owner["owner_name"];
+  $owner_img = $owner["owner_img"];
+}
+else {
+  echo "You don't have any matches yet!";
+}
 
  ?>
 
