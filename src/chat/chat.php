@@ -28,7 +28,7 @@ if($numrows === 1){
   $owner_img = $owner["owner_img"];
 }
 else {
-  echo "You don't have any matches yet!";
+  header("Location: no.php");
 }
 
  ?>
