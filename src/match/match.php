@@ -3,10 +3,10 @@
 require_once "../../config.php";
 session_start();
 
-$display = rand(1,5);
+$display = rand(1,20);
 $c = false;
 while($c === true){
-  $display = rand(1,5);
+  $display = rand(1,20);
   if(array_search($display, $_SESSION["matched"]) === false){
     $c = true;
   }
