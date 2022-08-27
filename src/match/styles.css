@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+.row {
+  display: flex;
+}
+
+.column {
+  float: left;
+}
+
+.col-30 {
+  width: 30%;
+  padding-top: 2em;
+}
+
+.col-3 {
+  padding-left: 2.2em;
+}
+
+.col-70 {
+  width: 70%;
+}
+
+.row-3 {
+  column-count: 2;
+  column-gap: 2em;
+  column-span: all;
+  padding: 1em 1em;
+}
+
+.profile-picture {
+  position: relative;
+}
+
+.owner-description {
+  padding-top: 0.7em;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #656d81;
+}
+
+.owner-description h2 {
+  font-weight: 500;
+}
+
+.owner-description h4 {
+  font-weight: 300;
+}
+
+.dog-picture {
+  position: relative;
+  object-fit: cover;
+  width: 12em;
+  height: 12em;
+  border-radius: 12em;
+  left: 7.5em;
+}
+
+.owner-picture {
+  position: absolute;
+  object-fit: cover;
+  width: 4.5em;
+  height: 4.5em;
+  border-radius: 4.5em;
+  top: 7em;
+  left: 15em;
+  border: solid 0.18em white;
+}
+
+.section {
+  display: flex;
+  width: 8em;
+}
+
+.section-description {
+  color: #404a63;
+}
+
+.right {
+  float: right;
+  text-align: right;
+}
+
+.left {
+  float: left;
+}
+
+.section-title {
+  font-size: 0.9em;
+  top: 0;
+  margin: 0;
+  padding-left: 0.5em;
+  font-weight: 600;
+}
+
+.section-var {
+  margin: 0;
+  padding-left: 0.57em;
+  font-size: 0.7em;
+  font-weight: 300;
+}
+
+.squared-icon {
+  width: 2.8em;
+  height: 2.8em;
+  background-color: #404a63;
+  color: #d6d6d6;
+  border-radius: 2em;
+}
+
+.squared-icon .fa {
+  position: relative;
+  left: 0.42em;
+  top: 0.37em;
+  font-size: 1.57em;
+}
